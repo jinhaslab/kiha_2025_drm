@@ -143,6 +143,15 @@ $$-1 \leq r \leq 1$$ (r \> 0)은 양의 상관, (r \< 0)은 음의 상관, (r = 
 -   이를 통해 연구 간 일관성 여부와 평균 효과를 확인할 수 있습니다.
 -   결국 평균을 내는데, 각 연구의 **가중치**를 부여한다. 입니다. 
 
+```{r}
+library(dmetar)
+library(esc)
+library(tidyverse)
+data(SuicidePrevention)
+SuicidePrevention %>% head()
+```
+
+
 SuicidePrevention은 dmetar 패키지에 포함된 예제 데이터셋으로, 자살 예방 프로그램의 효과를 평가한 연구 데이터를 담고 있습니다. 이 데이터는 보통 다음과 같은 열(column)을 포함합니다:
 
 - mean.e: 실험군(experimental group)의 평균
