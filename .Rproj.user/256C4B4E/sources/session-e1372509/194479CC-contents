@@ -1,13 +1,15 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "oemresearchmethods"
-  author: "Norah Jones"
+  title: "직업환경연구방법"
+  author: "jinha"
   date: "2025. 3. 20."
   chapters:
     - index.qmd
     - intro.qmd
+    - MetaAnalysis.qmd
     - summary.qmd
     - references.qmd
 
