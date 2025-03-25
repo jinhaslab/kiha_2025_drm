@@ -143,6 +143,16 @@ $$-1 \leq r \leq 1$$ (r \> 0)은 양의 상관, (r \< 0)은 음의 상관, (r = 
 -   이를 통해 연구 간 일관성 여부와 평균 효과를 확인할 수 있습니다.
 -   결국 평균을 내는데, 각 연구의 **가중치**를 부여한다. 입니다. 
 
+```{r,message=FALSE, warning=FALSE}
+if(!require(devtools)) install.packages("devtools")
+if(!require(tidyverse)) install.packages("tidyverse")
+if(!require(meta)) install.packages("meta")
+if(!require(dmetar)) devtools::install_github("MathiasHarrer/dmetar")
+if(!require(esc)) install.packages("esc")
+if(!require(htmlTable)) install.packages("htmlTable")
+```
+
+
 ```{r}
 library(dmetar)
 library(esc)

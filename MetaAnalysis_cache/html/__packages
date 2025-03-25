@@ -12,3 +12,6 @@ forcats
 lubridate
 metadat
 meta
+usethis
+devtools
+htmlTable
