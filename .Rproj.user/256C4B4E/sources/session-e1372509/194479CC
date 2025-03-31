@@ -3,7 +3,7 @@
     "path": "~/books/oemresearchmethods/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "0",
+    "hash": "430351897",
     "contents": "",
     "dirty": false,
     "created": 1742439749485.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "12,17",
+        "cursorPosition": "13,29",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1742443632,
+    "lastKnownWriteTime": 1743426299,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1742443632902,
+    "last_content_update": 1743426299872,
     "read_only": false,
     "read_only_alternatives": []
 }
