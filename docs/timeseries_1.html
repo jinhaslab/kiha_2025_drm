@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; 시계열분석 – 직업환경연구방법</title>
+<title>4&nbsp; 시계열분석 – 직업환경연구방법</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./MetaAnalysis.html" rel="prev">
+<link href="./InterruptedTS.html" rel="next">
+<link href="./Dose_Response_Model.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./timeseries_1.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">시계열분석</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./timeseries_1.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">시계열분석</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,14 +189,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Dose_Response_Model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dose Response Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./timeseries_1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">시계열분석</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">시계열분석</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./InterruptedTS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">중단된 시계열 분석</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,25 +227,25 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">3.1</span> introduction</a></li>
-  <li><a href="#공기-오염와-건강" id="toc-공기-오염와-건강" class="nav-link" data-scroll-target="#공기-오염와-건강"><span class="header-section-number">3.2</span> 공기 오염와 건강</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> introduction</a></li>
+  <li><a href="#공기-오염와-건강" id="toc-공기-오염와-건강" class="nav-link" data-scroll-target="#공기-오염와-건강"><span class="header-section-number">4.2</span> 공기 오염와 건강</a>
   <ul class="collapse">
-  <li><a href="#시작" id="toc-시작" class="nav-link" data-scroll-target="#시작"><span class="header-section-number">3.2.1</span> 시작</a></li>
-  <li><a href="#환경오염과-건강을-어떻게-연구할-것인가가" id="toc-환경오염과-건강을-어떻게-연구할-것인가가" class="nav-link" data-scroll-target="#환경오염과-건강을-어떻게-연구할-것인가가"><span class="header-section-number">3.2.2</span> 환경오염과 건강을 어떻게 연구할 것인가가</a></li>
+  <li><a href="#시작" id="toc-시작" class="nav-link" data-scroll-target="#시작"><span class="header-section-number">4.2.1</span> 시작</a></li>
+  <li><a href="#환경오염과-건강을-어떻게-연구할-것인가가" id="toc-환경오염과-건강을-어떻게-연구할-것인가가" class="nav-link" data-scroll-target="#환경오염과-건강을-어떻게-연구할-것인가가"><span class="header-section-number">4.2.2</span> 환경오염과 건강을 어떻게 연구할 것인가가</a></li>
   </ul></li>
-  <li><a href="#pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구" id="toc-pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구" class="nav-link" data-scroll-target="#pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구"><span class="header-section-number">3.3</span> PM10과 심혈관 질환 사망률에 대한 시뮬레이션 연구</a></li>
-  <li><a href="#사례-연구-독감과-자살" id="toc-사례-연구-독감과-자살" class="nav-link" data-scroll-target="#사례-연구-독감과-자살"><span class="header-section-number">3.4</span> 사례 연구 : 독감과 자살</a>
+  <li><a href="#pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구" id="toc-pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구" class="nav-link" data-scroll-target="#pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구"><span class="header-section-number">4.3</span> PM10과 심혈관 질환 사망률에 대한 시뮬레이션 연구</a></li>
+  <li><a href="#사례-연구-독감과-자살" id="toc-사례-연구-독감과-자살" class="nav-link" data-scroll-target="#사례-연구-독감과-자살"><span class="header-section-number">4.4</span> 사례 연구 : 독감과 자살</a>
   <ul class="collapse">
-  <li><a href="#실습-데이터" id="toc-실습-데이터" class="nav-link" data-scroll-target="#실습-데이터"><span class="header-section-number">3.4.1</span> 실습 데이터</a></li>
-  <li><a href="#simple-time-related-variable-adjusting-regression" id="toc-simple-time-related-variable-adjusting-regression" class="nav-link" data-scroll-target="#simple-time-related-variable-adjusting-regression"><span class="header-section-number">3.4.2</span> simple time-related variable adjusting regression</a></li>
-  <li><a href="#arima" id="toc-arima" class="nav-link" data-scroll-target="#arima"><span class="header-section-number">3.4.3</span> ARIMA</a></li>
+  <li><a href="#실습-데이터" id="toc-실습-데이터" class="nav-link" data-scroll-target="#실습-데이터"><span class="header-section-number">4.4.1</span> 실습 데이터</a></li>
+  <li><a href="#simple-time-related-variable-adjusting-regression" id="toc-simple-time-related-variable-adjusting-regression" class="nav-link" data-scroll-target="#simple-time-related-variable-adjusting-regression"><span class="header-section-number">4.4.2</span> simple time-related variable adjusting regression</a></li>
+  <li><a href="#arima" id="toc-arima" class="nav-link" data-scroll-target="#arima"><span class="header-section-number">4.4.3</span> ARIMA</a></li>
   </ul></li>
-  <li><a href="#분석-및-예측-회귀-분석" id="toc-분석-및-예측-회귀-분석" class="nav-link" data-scroll-target="#분석-및-예측-회귀-분석"><span class="header-section-number">3.5</span> 분석 및 예측, 회귀 분석</a></li>
-  <li><a href="#arima-1" id="toc-arima-1" class="nav-link" data-scroll-target="#arima-1"><span class="header-section-number">3.6</span> ARIMA</a>
+  <li><a href="#분석-및-예측-회귀-분석" id="toc-분석-및-예측-회귀-분석" class="nav-link" data-scroll-target="#분석-및-예측-회귀-분석"><span class="header-section-number">4.5</span> 분석 및 예측, 회귀 분석</a></li>
+  <li><a href="#arima-1" id="toc-arima-1" class="nav-link" data-scroll-target="#arima-1"><span class="header-section-number">4.6</span> ARIMA</a>
   <ul class="collapse">
-  <li><a href="#arima-감기-자살-aic" id="toc-arima-감기-자살-aic" class="nav-link" data-scroll-target="#arima-감기-자살-aic"><span class="header-section-number">3.6.1</span> arima 감기 자살 , AIC</a></li>
+  <li><a href="#arima-감기-자살-aic" id="toc-arima-감기-자살-aic" class="nav-link" data-scroll-target="#arima-감기-자살-aic"><span class="header-section-number">4.6.1</span> arima 감기 자살 , AIC</a></li>
   </ul></li>
-  <li><a href="#aic-bic-in-generalize-additive-model" id="toc-aic-bic-in-generalize-additive-model" class="nav-link" data-scroll-target="#aic-bic-in-generalize-additive-model"><span class="header-section-number">3.7</span> AIC BIC in generalize additive model</a></li>
+  <li><a href="#aic-bic-in-generalize-additive-model" id="toc-aic-bic-in-generalize-additive-model" class="nav-link" data-scroll-target="#aic-bic-in-generalize-additive-model"><span class="header-section-number">4.7</span> AIC BIC in generalize additive model</a></li>
   </ul>
 </nav>
     </div>
@@ -242,7 +254,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="tsregression" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">시계열분석</span></span></h1>
+<h1 class="title"><span id="tsregression" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">시계열분석</span></span></h1>
 </div>
 
 
@@ -259,15 +271,15 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">3.1</span> introduction</h2>
+<section id="introduction" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> introduction</h2>
 <p>시계열적 자료를 분석하고 나타나는 현상과 특정 요인과 관련성을 탐색해보는 시간입니다. 예를 들어 미세먼지가 높은 날 심혈관 질환이 발생하는가?에 대한 질문에 답하기 위해서 생가할 것이 몇가지 있습니다. 미세먼지가 높은 날이란? 심혈관 질환 사망이 높은 날이란? 이 두가지 요소를 검토하게 됩니다. <br> 그런데 심혈관 질환의 사망은 요일마다 다르고, 계절에 따라 변동하며, 장기 적으로는 점차 증가 또는 감소를 합니다. 그런데 미세먼지도 점차 증가하고 있으니, 단순 상관관계를 보면 미세먼지도 증가 심혈관 사망도 증가하면 양의 관련성을 보이게 됩니다. 마찬가지로 GDP와 자살의 관계를 보면 어떨까요? 우리나라의 자살률은 증가하고 있습니다. 그런데 GDP도 증가하고 있습니다. 그러니 GDP의 증가와 자살의 증가는 양의 상관관계가 있다고 나옵니다. 맞나요? 네 심혈관 사망, 자살의 증가의 계절적 요소, 장기간 추세(trend)가 아니라 변동이 미세먼지나 GDP의 변동과 어떠한 관계가 있는지가 우리의 궁금증일 것 입니다. 이러한 궁금증을 R을 이용해서 풀어보도록 하겠습니다.</p>
 </section>
-<section id="공기-오염와-건강" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="공기-오염와-건강"><span class="header-section-number">3.2</span> 공기 오염와 건강</h2>
+<section id="공기-오염와-건강" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="공기-오염와-건강"><span class="header-section-number">4.2</span> 공기 오염와 건강</h2>
 <p>the original book is https://www.springer.com/gp/book/9780387781662 이 책에서 중요한 부분을 요약하고, 몇몇을 추가하여 진행하겠습니다. 원본을 읽어 보시는 것을 추천해 드립니다.</p>
-<section id="시작" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="시작"><span class="header-section-number">3.2.1</span> 시작</h3>
+<section id="시작" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="시작"><span class="header-section-number">4.2.1</span> 시작</h3>
 <p>이 책은 NMMAPSlite 패키지를 사용했지만, 해당 패키지와 데이터는 사용하기 쉽지 않습니다. 따라서 Gasparrini의 dlnm 패키지와 해당 패키지의 데이터가 이 요약 튜토리얼(https://github.com/gasparrini/dlnm/tree/master/data)에서 사용되었습니다.</p>
 <p>필요한 라이브러리를 불러옵니다.</p>
 <div class="cell">
@@ -283,14 +295,14 @@ window.Quarto = {
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(mgcv)) <span class="fu">install.packages</span>(<span class="st">"mgcv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="환경오염과-건강을-어떻게-연구할-것인가가" class="level3" data-number="3.2.2">
-<h3 data-number="3.2.2" class="anchored" data-anchor-id="환경오염과-건강을-어떻게-연구할-것인가가"><span class="header-section-number">3.2.2</span> 환경오염과 건강을 어떻게 연구할 것인가가</h3>
-<section id="tell-a-story" class="level4" data-number="3.2.2.1">
-<h4 data-number="3.2.2.1" class="anchored" data-anchor-id="tell-a-story"><span class="header-section-number">3.2.2.1</span> tell a story</h4>
+<section id="환경오염과-건강을-어떻게-연구할-것인가가" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="환경오염과-건강을-어떻게-연구할-것인가가"><span class="header-section-number">4.2.2</span> 환경오염과 건강을 어떻게 연구할 것인가가</h3>
+<section id="tell-a-story" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="tell-a-story"><span class="header-section-number">4.2.2.1</span> tell a story</h4>
 <p>’매일 발생하는 대기 오염 수준의 변화와 매일 발생하는 사망자 수 변화 사이의 관계’에 대한 이야기를 하고 싶습니다. 따라서, 예측보다는 연관성을 추정하는 데 유용한 통계 모델이 필요합니다.</p>
 </section>
-<section id="추정-vs.-예측" class="level4" data-number="3.2.2.2">
-<h4 data-number="3.2.2.2" class="anchored" data-anchor-id="추정-vs.-예측"><span class="header-section-number">3.2.2.2</span> 추정 vs.&nbsp;예측</h4>
+<section id="추정-vs.-예측" class="level4" data-number="4.2.2.2">
+<h4 data-number="4.2.2.2" class="anchored" data-anchor-id="추정-vs.-예측"><span class="header-section-number">4.2.2.2</span> 추정 vs.&nbsp;예측</h4>
 <p>과학적으로 흥미로운 질문 중 하나는 “PM10 시계열의 변화가 사망률 시계열의 변화와 관련이 있는가?”입니다. 이 질문은 본질적으로 시간에 따라 변하는 건강 결과 <span class="math inline">\(y_{t}\)</span>와 시간에 따라 변하는 노출 <span class="math inline">\(x_{t}\)</span> 간의 관계를 탐구합니다. 이를 간단한 선형 모델로 표현하면 (식 1.1)과 같이 나타낼 수 있습니다.</p>
 <p><span class="math display">\[Y_{i}=\beta_{0}+\beta_{1}\textrm{x}_{t}+\epsilon_{t} \tag{1.1}\]</span></p>
 <table class="caption-top table">
@@ -345,8 +357,8 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구"><span class="header-section-number">3.3</span> PM10과 심혈관 질환 사망률에 대한 시뮬레이션 연구</h2>
+<section id="pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="pm10과-심혈관-질환-사망률에-대한-시뮬레이션-연구"><span class="header-section-number">4.3</span> PM10과 심혈관 질환 사망률에 대한 시뮬레이션 연구</h2>
 <p>먼저, 시뮬레이션 데이터를 사용하여 시계열 데이터 분석을 이해해보겠습니다.</p>
 <blockquote class="blockquote">
 <p>x를 날짜로 생각하고, 가상으로 300일 동안 랜덤 변수 y1과 PM10(미세먼지)을 4.5배 곱한 값을 생성해봅시다.</p>
@@ -513,8 +525,8 @@ Number of Fisher Scoring iterations: 2</code></pre>
 </div>
 </div>
 <p>이것은 직관적인 그래프입니다. 시간 추세와 계절적 변동을 제거한 후 두 잔차 간의 관계를 보여줍니다.</p>
-<section id="자기상관-autocorrelation" class="level4" data-number="3.3.0.1">
-<h4 data-number="3.3.0.1" class="anchored" data-anchor-id="자기상관-autocorrelation"><span class="header-section-number">3.3.0.1</span> 자기상관 (Autocorrelation)</h4>
+<section id="자기상관-autocorrelation" class="level4" data-number="4.3.0.1">
+<h4 data-number="4.3.0.1" class="anchored" data-anchor-id="자기상관-autocorrelation"><span class="header-section-number">4.3.0.1</span> 자기상관 (Autocorrelation)</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">=</span> <span class="fu">cbind</span>(<span class="st">'time'</span><span class="ot">=</span>x, pm,death2,event) <span class="sc">%&gt;%</span> <span class="fu">data.frame</span>() <span class="sc">%&gt;%</span> <span class="fu">tibble</span>()</span>
@@ -581,7 +593,7 @@ AIC=1680.42   AICc=1680.62   BIC=1698.92</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="timeseries_1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="timeseries_1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
@@ -767,11 +779,11 @@ risk.pp150  4 1629.2747</code></pre>
 <p>이제 6일을 지연 시간으로 사용하여 회귀 분석을 수행할 수 있다는 것을 알았습니다. 남은 것은 시계열 요소를 찾고, 수정하고, 이 과정을 합리화하는 방법에 대해 더 논의하는 것입니다.</p>
 </section>
 </section>
-<section id="사례-연구-독감과-자살" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="사례-연구-독감과-자살"><span class="header-section-number">3.4</span> 사례 연구 : 독감과 자살</h2>
+<section id="사례-연구-독감과-자살" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="사례-연구-독감과-자살"><span class="header-section-number">4.4</span> 사례 연구 : 독감과 자살</h2>
 <p>이번에는 독감 유행과 자살에 대해 이야기해 보겠습니다. 몇 년 전 일본에서 독감 치료 중 자살이 뉴스에 나왔는데, 독감이 주로 유행하는 계절적 요인의 문제인지, 아니면 독감 유행이 정말 심할 때 자살이 발생하는 것인지 분석해 보고자 합니다.</p>
-<section id="실습-데이터" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="실습-데이터"><span class="header-section-number">3.4.1</span> 실습 데이터</h3>
+<section id="실습-데이터" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="실습-데이터"><span class="header-section-number">4.4.1</span> 실습 데이터</h3>
 <p>첫번째 실습 데이터는 감염병 포탈의 인플루엔자 자료입니다. 여기서 다운로드 합니다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -910,8 +922,8 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>tr.tflu <span class="ot">&lt;-</span>d.tflu<span class="sc">$</span>trend <span class="co"># long term trend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="simple-time-related-variable-adjusting-regression" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="simple-time-related-variable-adjusting-regression"><span class="header-section-number">3.4.2</span> simple time-related variable adjusting regression</h3>
+<section id="simple-time-related-variable-adjusting-regression" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="simple-time-related-variable-adjusting-regression"><span class="header-section-number">4.4.2</span> simple time-related variable adjusting regression</h3>
 <p>결국 resudial flu와 residual sui의 상관관계를 보면 되는 것이라고 생각해 봅시다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span>
@@ -936,19 +948,20 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(r.tflu, r.tsui, <span class="at">cex=</span><span class="fl">0.2</span>, <span class="at">main=</span><span class="st">"no lag model"</span>)</span>
-<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> r.tflu))</span>
-<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">130</span>, <span class="st">'Beta ='</span>)</span>
-<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">100</span>, <span class="st">'P value='</span>)</span>
-<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">130</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">0</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">2</span>)], <span class="dv">4</span>))</span>
-<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">100</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">0</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">8</span>)], <span class="dv">4</span>))</span>
-<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>), r.tsui, <span class="at">cex=</span><span class="fl">0.2</span>, <span class="at">main=</span><span class="st">"3 weeks lag model"</span>)</span>
-<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>)))</span>
-<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">130</span>, <span class="st">'Beta ='</span>)</span>
-<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">100</span>, <span class="st">'P value='</span>)</span>
-<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">130</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">2</span>)], <span class="dv">3</span>))</span>
-<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">100</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">8</span>)], <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar=</span><span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>) <span class="sc">+</span> <span class="fl">0.1</span>)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(r.tflu, r.tsui, <span class="at">cex=</span><span class="fl">0.2</span>, <span class="at">main=</span><span class="st">"no lag model"</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> r.tflu))</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">130</span>, <span class="st">'Beta ='</span>)</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">100</span>, <span class="st">'P value='</span>)</span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">130</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">0</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">2</span>)], <span class="dv">4</span>))</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">100</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">0</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">8</span>)], <span class="dv">4</span>))</span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>), r.tsui, <span class="at">cex=</span><span class="fl">0.2</span>, <span class="at">main=</span><span class="st">"3 weeks lag model"</span>)</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>)))</span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">130</span>, <span class="st">'Beta ='</span>)</span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">15</span>, <span class="dv">100</span>, <span class="st">'P value='</span>)</span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">130</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">2</span>)], <span class="dv">3</span>))</span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">30</span>, <span class="dv">100</span>, <span class="fu">round</span>(<span class="fu">summary</span>(<span class="fu">lm</span>(r.tsui <span class="sc">~</span> <span class="fu">Lag</span>(r.tflu, <span class="dv">3</span>)))<span class="sc">$</span>coefficients[<span class="fu">c</span>(<span class="dv">8</span>)], <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -958,8 +971,8 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 </div>
 </div>
 </section>
-<section id="arima" class="level3" data-number="3.4.3">
-<h3 data-number="3.4.3" class="anchored" data-anchor-id="arima"><span class="header-section-number">3.4.3</span> ARIMA</h3>
+<section id="arima" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="arima"><span class="header-section-number">4.4.3</span> ARIMA</h3>
 <p>ARIMA 및 시계열 분석 이 과정에서 다룰 수 있는 내용은 다음과 같습니다.</p>
 <ul>
 <li>날짜 및 시간 형식 지정</li>
@@ -992,12 +1005,12 @@ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 </table>
 </section>
 </section>
-<section id="분석-및-예측-회귀-분석" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="분석-및-예측-회귀-분석"><span class="header-section-number">3.5</span> 분석 및 예측, 회귀 분석</h2>
+<section id="분석-및-예측-회귀-분석" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="분석-및-예측-회귀-분석"><span class="header-section-number">4.5</span> 분석 및 예측, 회귀 분석</h2>
 <p>시계열 분석은 패턴을 찾기 위해 데이터를 분석하는 것이고, 예측은 그 패턴을 미래로 확장하는 것입니다. 시계열 패턴을 이용한 회귀 분석(시계열 회귀 분석)은 시계열 분석을 사용하는 회귀 방법입니다.</p>
 </section>
-<section id="arima-1" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="arima-1"><span class="header-section-number">3.6</span> ARIMA</h2>
+<section id="arima-1" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="arima-1"><span class="header-section-number">4.6</span> ARIMA</h2>
 <p>ARIMA(자기회귀 통합 이동 평균, Autoregressive Integrated Moving Average)는 문자 그대로 자기회귀와 이동 평균을 이용합니다. 단변량 시계열(univariate time series)로 볼 수 있습니다. ARIMA 모델에서는 여러 매개변수를 자동으로 또는 수동으로 설정하여 구성합니다.</p>
 <p><strong><code>ARIMA(p, d, q)</code></strong>를 이해하면서 가 봅겠습니다. <br></p>
 <table class="caption-top table">
@@ -1079,8 +1092,8 @@ y_t &amp;= \phi_1y_{t-1} + \varepsilon_t\\
 <p>d 는 시계열그림에서 ACF, PACF의 형태를 보고 차분의 필요여부 및 차수를 d를 결정하고 AR차수와 MA차수를 결정</p>
 </blockquote>
 <p>어떻게 <strong>p, d, q</strong> 를 구할수 있을 까요?, 다음 장을 보겠습니다. ** 다음에 기회가 있을 때 하겠습니다.**</p>
-<section id="arima-감기-자살-aic" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="arima-감기-자살-aic"><span class="header-section-number">3.6.1</span> arima 감기 자살 , AIC</h3>
+<section id="arima-감기-자살-aic" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="arima-감기-자살-aic"><span class="header-section-number">4.6.1</span> arima 감기 자살 , AIC</h3>
 <p>아래 ARIMA 모델을 보면 AIC 가 6583정도 나온 것을 알 수 있습니다. 우리는 이것을 통해 AIC가 6583 이하 정도 나오는 gam 모델을 사용하겠다 정도의 개념을 얻었습니다.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</span>
@@ -1117,15 +1130,15 @@ sigma^2 estimated as 755.2:  log likelihood = -3289.13,  aic = 6584.26</code></p
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="timeseries_1_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="timeseries_1_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="aic-bic-in-generalize-additive-model" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="aic-bic-in-generalize-additive-model"><span class="header-section-number">3.7</span> AIC BIC in generalize additive model</h2>
+<section id="aic-bic-in-generalize-additive-model" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="aic-bic-in-generalize-additive-model"><span class="header-section-number">4.7</span> AIC BIC in generalize additive model</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>gg <span class="ot">&lt;-</span><span class="cf">function</span>(x) {</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  model <span class="ot">&lt;-</span><span class="fu">glm</span>(<span class="at">data=</span>myd, wsui <span class="sc">~</span> <span class="fu">ns</span>(ymd2, x))</span>
@@ -1358,10 +1371,10 @@ sigma^2 estimated as 755.2:  log likelihood = -3289.13,  aic = 6584.26</code></p
 <span id="cb95-5"><a href="#cb95-5" aria-hidden="true" tabindex="-1"></a>pred1.cb1 <span class="ot">&lt;-</span><span class="fu">crosspred</span>(cb1, model1, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">bylag=</span><span class="fl">0.1</span>,  <span class="at">cumul=</span><span class="cn">TRUE</span>)</span>
 <span id="cb95-6"><a href="#cb95-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pred1.cb1, <span class="st">"slices"</span>, <span class="at">var=</span><span class="dv">1</span>, <span class="at">col=</span><span class="dv">3</span>, <span class="at">ylab=</span><span class="st">"Relative risk of suicide"</span>, <span class="co">#ci.arg=list(density=50, lwd=1),#</span></span>
 <span id="cb95-7"><a href="#cb95-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">"Temporal effect by influenza"</span>, </span>
-<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Lag (weeks)"</span>,  <span class="at">family=</span><span class="st">"A"</span>,<span class="co">#ylim=c(0.980, 1.02),</span></span>
+<span id="cb95-8"><a href="#cb95-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Lag (weeks)"</span>,  <span class="co">#ylim=c(0.980, 1.02),</span></span>
 <span id="cb95-9"><a href="#cb95-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">col=</span><span class="st">'black'</span>) ;<span class="fu">grid</span>()</span>
 <span id="cb95-10"><a href="#cb95-10" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="at">main=</span><span class="st">"% increment of influenza like illness"</span>, </span>
-<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">family=</span><span class="st">"A"</span>, </span>
+<span id="cb95-11"><a href="#cb95-11" aria-hidden="true" tabindex="-1"></a>       </span>
 <span id="cb95-12"><a href="#cb95-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">adj=</span><span class="dv">1</span>, <span class="at">line=</span><span class="dv">0</span>, <span class="at">font.main=</span><span class="dv">3</span>, <span class="at">cex=</span><span class="fl">0.5</span> )</span>
 <span id="cb95-13"><a href="#cb95-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb95-14"><a href="#cb95-14" aria-hidden="true" tabindex="-1"></a>lin <span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">10</span>)</span>
@@ -1969,13 +1982,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./MetaAnalysis.html" class="pagination-link" aria-label="메타분석">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">메타분석</span></span>
+      <a href="./Dose_Response_Model.html" class="pagination-link" aria-label="Dose Response Model">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dose Response Model</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./InterruptedTS.html" class="pagination-link" aria-label="중단된 시계열 분석">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">중단된 시계열 분석</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

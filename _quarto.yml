@@ -10,8 +10,9 @@ book:
     - index.qmd
     - intro.qmd
     - MetaAnalysis.qmd
-    - timeseries_1.qmd
     - Dose_Response_Model.qmd
+    - timeseries_1.qmd
+    - InterruptedTS.qmd
     - summary.qmd
     - references.qmd
 

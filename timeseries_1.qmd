@@ -210,7 +210,7 @@ $$ c(0) = \frac{1}{N} \sum_{t=1}^{N-k}(x_{t} - \bar{x})^2 $$
 
 자기상관 분석에서 가장 중요한 요소 중 하나는 계절성(seasonal factor)입니다. 따라서 계절성 요인을 제거하기 전과 후의 자기상관 함수(ACF) 플롯을 비교합니다.
 
-```{r, message=FALSE, warning = FALSE, fig.width=10, fig.height=20}
+```{r, message=FALSE, warning = FALSE, fig.width=8, fig.height=16}
 #par(mflow)
 par(mfrow=c(4, 2))
 plot(x, death2, type='p', cex=0.5)
@@ -443,8 +443,8 @@ abline(lm(r.tsui ~ Lag(r.tflu, 3)))
 
 
 ```{r}
-
 par(mfrow=c(1,2))
+par(mar=c(4, 4, 2, 1) + 0.1)
 plot(r.tflu, r.tsui, cex=0.2, main="no lag model")
 abline(lm(r.tsui ~ r.tflu))
 text(15, 130, 'Beta =')
@@ -550,7 +550,7 @@ y_t &= \phi_1y_{t-1} + \varepsilon_t\\
 ###  arima 감기 자살 , AIC
 
  아래 ARIMA 모델을 보면 AIC 가 6583정도 나온 것을 알 수 있습니다. 우리는 이것을 통해 AIC가 6583 이하 정도 나오는 gam 모델을 사용하겠다 정도의 개념을 얻었습니다. 
-```{r}
+```{r, message=FALSE, warning = FALSE, fig.width=8, fig.height=16}
 par(mfrow=c(1,1))
 auto.arima(myd$wsui)
 myd <-myd %>% mutate(ma4 =ma(wsui, order=4), ymd2=as.Date(ymd2) ) ### 4weeks moving average
@@ -720,10 +720,10 @@ model1<-glm(data=myd, wsui ~ cb1 + ns(ordweek, 39)+ns(sin.x, 2)+ns(cos.x, 2), fa
 pred1.cb1 <-crosspred(cb1, model1, at=1:100, bylag=0.1,  cumul=TRUE)
 plot(pred1.cb1, "slices", var=1, col=3, ylab="Relative risk of suicide", #ci.arg=list(density=50, lwd=1),#
      main="Temporal effect by influenza", 
-     xlab="Lag (weeks)",  family="A",#ylim=c(0.980, 1.02),
+     xlab="Lag (weeks)",  #ylim=c(0.980, 1.02),
      col='black') ;grid()
 title(main="% increment of influenza like illness", 
-      family="A", 
+       
       adj=1, line=0, font.main=3, cex=0.5 )
 
 lin <-c(5:10)
