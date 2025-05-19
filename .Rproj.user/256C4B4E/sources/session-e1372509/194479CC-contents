@@ -13,6 +13,8 @@ book:
     - Dose_Response_Model.qmd
     - timeseries_1.qmd
     - InterruptedTS.qmd
+    - Jobstress.qmd
+    - Interraction_1.qmd
     - summary.qmd
     - references.qmd
 

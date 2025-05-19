@@ -62,6 +62,7 @@ basic %>%
 basic = basic %>% 
   mutate(disease = -1*hstatus+5, 
          exp.b   = -1*trace.e +50) 
+
 fig1 = basic  %>%
   ggplot(aes(x= exp.b, y = disease))+
   theme_minimal()+

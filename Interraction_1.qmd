@@ -1,0 +1,377 @@
+# 상호작용
+
+## 서론
+
+이 강의록은 VanderWeele와 Knol의 논문 *"A Tutorial on Interaction"* (Epidemiol. Methods 2014; 3(1): 33-72)을 기반으로 작성되었습니다. 상호작용(interaction)은 한 노출(exposure)의 효과가 다른 노출의 존재 여부에 따라 달라지는 현상을 의미합니다. 이 현상은 역학, 생물의학, 사회과학 등 다양한 분야에서 중요한 연구 주제입니다. 본 강의록에서는 상호작용의 개념, 동기, 척도별 분석 방법, 통계 모델, 그리고 실제 적용 사례를 다룹니다.
+
+### 주요 목표
+
+-   상호작용의 정의와 중요성을 이해한다.
+-   가법(additive) 및 승법(multiplicative) 척도에서의 상호작용 분석 방법을 학습한다.
+-   통계 모델을 활용한 상호작용 추정 방법을 익힌다.
+-   공중보건적 관점에서 상호작용의 해석을 이해한다.
+
+------------------------------------------------------------------------
+
+## 상호작용이란?
+
+상호작용은 두 노출($G$, $E$)이 결과($D$)에 미치는 효과가 서로 독립적이지 않고, 한 노출의 효과가 다른 노출의 수준에 따라 달라지는 경우를 말합니다. 예를 들어, 흡연과 석면 노출이 폐암 위험에 미치는 영향은 두 요인이 함께 존재할 때 더욱 크게 나타날 수 있습니다.
+
+### 상호작용의 동기
+
+상호작용 연구는 여러 이유로 중요합니다: 1. **자원 할당 최적화**: 제한된 자원으로 특정 집단에 개입할 때, 효과가 큰 하위집단을 식별할 수 있다. 2. **기전 이해**: 상호작용은 결과 발생 메커니즘에 대한 통찰을 제공할 수 있다. 3. **검정력 향상**: 상호작용을 고려하면 전체 효과를 탐지하는 검정력이 높아질 수 있다. 4. **부작용 방지**: 특정 집단에서 개입이 해로울 수 있는 경우를 식별한다.
+
+------------------------------------------------------------------------
+
+## 상호작용의 척도
+
+상호작용은 가법 척도와 승법 척도에서 다르게 정의됩니다. 두 이진 노출($G$, $E$)과 이진 결과($D$)를 기준으로 설명합니다. 여기서 $p_{ge} = P(D=1 \mid G=g, E=e)$는 $G=g$, $E=e$일 때 결과가 발생할 확률입니다.
+
+### 가법 상호작용
+
+가법 상호작용은 두 노출의 공동 효과가 각 노출의 개별 효과의 합을 초과하는지를 평가합니다. 수식은 다음과 같습니다:
+
+$$p_{11} - p_{10} - p_{01} + p_{00}$$
+
+-   **양의 가법 상호작용**: 위 값이 0보다 크면 "super-additive"라 부릅니다.
+-   **음의 가법 상호작용**: 0보다 작으면 "sub-additive"라 부릅니다.
+
+**예시: 흡연과 석면 노출**
+
+Hilt et al. (1986)의 데이터를 사용하여 계산해 보겠습니다.
+
+|          | 석면 없음 | 석면 있음 |
+|----------|-----------|-----------|
+| 비흡연자 | 0.0011    | 0.0067    |
+| 흡연자   | 0.0095    | 0.0450    |
+
+가법 상호작용 계산:
+
+$$ p\_{11} - p\_{10} - p\_{01} + p\_{00} = 0.0450 - 0.0095 - 0.0067 + 0.0011 = 0.0299 $$
+
+결과는 양의 가법 상호작용을 나타냅니다.
+
+### 승법 상호작용
+
+승법 상호작용은 위험비(risk ratio, RR) 또는 오즈비(odds ratio, OR)를 기준으로 두 노출의 공동 효과가 각 노출의 개별 효과의 곱을 초과하는지를 평가합니다. 위험비 기준 수식은 다음과 같습니다:
+
+$$ \frac{RR_{11}}{RR_{10} \cdot RR_{01}} = \frac{p_{11} \cdot p_{00}}{p_{10} \cdot p_{01}} $$
+
+-   **양의 승법 상호작용**: 위 값이 1보다 크면 양의 상호작용입니다.
+-   **음의 승법 상호작용**: 1보다 작으면 음의 상호작용입니다.
+
+위 예시 데이터를 사용하여 승법 상호작용을 계산:
+
+$$ RR\_{11} = \frac{0.0450}{0.0011}, \quad RR\_{10} = \frac{0.0095}{0.0011}, \quad RR\_{01} = \frac{0.0067}{0.0011} $$
+
+$$ \frac{RR_{11}}{RR_{10} \cdot RR_{01}} = \frac{40.9}{8.6 \times 6.1} = 0.78 $$
+
+결과는 음의 승법 상호작용을 나타냅니다.
+
+### 가법 vs 승법: 공중보건적 관점
+
+-   **가법 상호작용**은 공중보건적 의사결정에 더 적합합니다. 예를 들어, 자원이 제한적일 때 가법 상호작용이 양이면 특정 하위집단($G=1$)에 개입하는 것이 더 큰 효과를 가져옵니다.
+-   **승법 상호작용**은 통계적 모델링(특히 로지스틱 회귀)에서 편리하지만, 기준 위험(baseline risk)의 차이로 인해 잘못된 하위집단을 선택할 수 있습니다.
+
+------------------------------------------------------------------------
+
+### 가법 상호작용 추정: RERI와 통계적 모델
+
+가법 상호작용은 직접적인 위험 차이($p_{11} - p_{10} - p_{01} + p_{00}$)를 계산하기 어려운 경우, **상대초과위험(Relative Excess Risk due to Interaction, RERI)**을 사용하여 추정합니다. RERI는 위험비 또는 오즈비를 기반으로 정의됩니다:
+
+$$
+RERI_{RR} = RR_{11} - RR_{10} - RR_{01} + 1
+$$
+
+로지스틱 회귀를 사용할 경우, 오즈비 기반 RERI는 다음과 같이 계산됩니다:
+
+$$
+RERI_{OR} = e^{\gamma_1 + \gamma_2 + \gamma_3} - e^{\gamma_1} - e^{\gamma_2} + 1
+$$
+
+여기서 $\gamma_1$, $\gamma_2$, $\gamma_3$는 로지스틱 회귀 모델의 계수입니다:
+
+$$
+\log \text{it} \{ P(D=1 \mid G=g, E=e, C=c) \} = \gamma_0 + \gamma_1 g + \gamma_2 e + \gamma_3 eg + \gamma_4' c
+$$
+
+-   **장점**: 로지스틱 회귀는 연속형 공변량($C$)이 포함된 경우에도 수렴 문제가 적으며, 사례-대조 연구(case-control study)에서도 사용 가능합니다.
+-   **주의점**: 결과가 흔한 경우($>10\%$), $RERI_{OR}$은 $RERI_{RR}$을 정확히 근사하지 못할 수 있습니다. 이 경우 로그선형 모델이나 수정된 포아송 회귀를 고려할 수 있습니다.
+
+#### RERI의 공중보건적 해석
+
+-   $RERI > 0$: $G=1$ 집단에서 $E$에 대한 개입이 더 큰 공중보건적 효과를 가짐.
+-   $RERI < 0$: $G=0$ 집단에서 $E$에 대한 개입이 더 효과적.
+-   $RERI = 0$: 두 집단 간 개입 효과 차이 없음.
+
+### 연속형 및 범주형 노출에서의 상호작용
+
+#### 연속형 노출
+
+연속형 노출($G$, $E$)의 경우, RERI는 특정 수준 간 변화(예: $G$가 $g_0$에서 $g_1$로, $E$가 $e_0$에서 $e_1$로)를 기준으로 계산됩니다:
+
+$$
+RERI_{OR} = e^{(\gamma_1 (g_1 - g_0) + \gamma_2 (e_1 - e_0) + \gamma_3 (g_1 e_1 - g_0 e_0))} - e^{(\gamma_1 (g_1 - g_0) + \gamma_3 (g_1 - g_0) e_0)} - e^{(\gamma_2 (e_1 - e_0) + \gamma_3 (e_1 - e_0) g_0)} + 1
+$$
+
+**주의**: - RERI는 비교하는 수준($g_0, g_1$, $e_0, e_1$)에 따라 달라질 수 있습니다. - 절대 위험의 가법 상호작용 크기와 RERI의 크기는 기준 위험($p_{00}$)에 따라 달라질 수 있으므로, 방향(양/음/0)만 해석하는 것이 안전합니다.
+
+#### 범주형 노출
+
+범주형 노출의 경우, 두 수준 간 비교를 위해 데이터를 제한하여 이진 노출처럼 분석합니다. 예를 들어, 노출 $A$ (수준: A1, A2, A3)와 $B$ (수준: B1, B2, B3, B4)를 비교할 때, A1 vs A2와 B1 vs B4를 선택하여 분석합니다.
+
+------------------------------------------------------------------------
+
+## R을 사용한 상호작용 분석
+
+R을 사용하여 가법 상호작용(RERI)을 추정하는 방법을 소개합니다. `glm()`으로 로지스틱 회귀를 수행하고, `car` 패키지의 `deltaMethod()`로 RERI와 신뢰구간을 계산합니다.
+
+### R 코드: 이진 노출에 대한 가법 상호작용
+
+다음은 이진 노출($G$, $E$)에 대한 RERI 추정 코드입니다. 데이터프레임 `mydata`에 결과 변수 `d`, 노출 변수 `g`, `e`, 공변량 `c1`, `c2`, `c3`가 포함되어 있다고 가정합니다.
+
+```{r, eval=FALSE}
+# 패키지 로드
+library(car)
+library(dplyr)
+
+
+# 데이터 시뮬레이션
+set.seed(123) # 결과 재현을 위해 시드 설정
+N_binary <- 1000 # 샘플 크기
+
+# 공변량 생성
+c1_bin <- rnorm(N_binary, 50, 10) # 예: 나이
+c2_bin <- rbinom(N_binary, 1, 0.4) # 예: 성별 (0 또는 1)
+c3_bin <- rnorm(N_binary, 25, 5)  # 예: BMI
+#c1_bin
+# 이진 노출 G와 E 생성 (서로 약간의 상관관계가 있을 수 있도록 시뮬레이션)
+g_bin_latent <- rnorm(N_binary)
+e_bin_latent <- 0.3 * g_bin_latent + rnorm(N_binary) # g와 e 간 약한 상관관계 부여
+g_bin <- ifelse(g_bin_latent > median(g_bin_latent), 1, 0) # 이진화
+e_bin <- ifelse(e_bin_latent > median(e_bin_latent), 1, 0) # 이진화
+
+# 결과 변수 d 생성 (로지스틱 모델 기반)
+# logit(P(d=1)) = beta0 + beta_g*g + beta_e*e + beta_ge*g*e + beta_c1*c1 + beta_c2*c2 ...
+# RERI_OR = exp(beta_g + beta_e + beta_ge) - exp(beta_g) - exp(beta_e) + 1
+# 목표 RERI_OR = 0.5 (예시)
+# exp(beta_g)=1.5, exp(beta_e)=1.2 이면,
+# exp(beta_g + beta_e + beta_ge) = 0.5 + 1.5 + 1.2 - 1 = 2.2
+# beta_g = log(1.5) approx 0.405
+# beta_e = log(1.2) approx 0.182
+# beta_ge = log(2.2) - log(1.5) - log(1.2) = log(2.2 / (1.5 * 1.2)) = log(2.2/1.8) = log(1.222) approx 0.200
+
+log_odds_bin <- -3 + 0.405*g_bin + 0.182*e_bin + 0.200*g_bin*e_bin + 0.02*c1_bin - 0.1*c2_bin + 0.01*c3_bin
+prob_d_bin <- plogis(log_odds_bin) # plogis는 1/(1+exp(-x))와 동일 (로지스틱 함수)
+d_bin <- rbinom(N_binary, 1, prob_d_bin)
+
+mydata_binary <- data.frame(d = d_bin, g = g_bin, e = e_bin, c1 = c1_bin, c2 = c2_bin, c3 = c3_bin)
+
+# 로지스틱 회귀 모델 적합
+# d ~ g + e + g*e + c1 + c2 + c3 (g*e가 g:e와 동일)
+# 주의: 모델 계수의 순서가 parameterNames와 일치해야 함.
+# (Intercept), g, e, c1, c2, c3, g:e 순으로 나오는 경향이 있음.
+# 명시적으로 순서를 맞추려면 g + e + c1 + c2 + c3 + g:e 와 같이 인터랙션 항을 뒤로.
+# 또는 parameterNames를 names(coef(model_binary))로 하고, 수식에서 실제 변수명 사용.
+# 여기서는 사용자님의 parameterNames 방식("b0"..."b6")을 따르기 위해,
+# g:e 항이 4번째 예측변수(b3)가 되도록 모델 정의.
+model_binary <- glm(d ~ g + e + g:e + c1 + c2 + c3,
+                    family = binomial(link = "logit"), data = mydata_binary)
+print("Binary Model Summary:")
+print(summary(model_binary))
+
+# RERI_OR 계산 (deltaMethod 사용)
+# parameterNames 순서: (Intercept), g, e, g:e, c1, c2, c3
+# 따라서 b0=(Intercept), b1=g, b2=e, b3=g:e, b4=c1, b5=c2, b6=c3
+# deltaMethod에서 사용하는 b1,b2,b3는 G, E, G:E의 계수를 의미함.
+# names(coef(model_binary))를 확인하여 b1,b2,b3가 어떤 계수인지 정확히 파악해야함.
+# 만약 g, e, g:e가 모델에서 2, 3, 7번째 계수라면 (Intercept 포함)
+# parameterNames = names(coef(model_binary))로 하고, 수식에서 실제 변수명을 사용하는 것이 더 안전.
+# 그러나 사용자님 코드의 parameterNames 방식(b0, b1...)을 따름.
+# 이 경우 g, e, g:e가 각각 b1, b2, b3에 해당함 (Intercept가 b0).
+param_names_bin <- paste0("b", 0:(length(coef(model_binary))-1))
+
+cat("\nBinary Model RERI_OR Calculation:\n")
+reri_binary <- tryCatch({
+  deltaMethod(model_binary,
+              "exp(b1 + b2 + b3) - exp(b1) - exp(b2) + 1",
+              parameterNames = param_names_bin)
+}, error = function(e) {
+  cat("Error in deltaMethod for binary model: ", conditionMessage(e), "\n")
+  cat("Check coefficient names and parameterNames argument.\n")
+  cat("Coefficients from model: ", paste(names(coef(model_binary)), collapse=", "), "\n")
+  cat("Expected parameterNames: ", paste(param_names_bin, collapse=", "), "\n")
+  return(NULL)
+})
+if (!is.null(reri_binary)) {
+  print(reri_binary)
+}
+```
+
+
+### R 코드: 연속형 노출에 대한 가법 상호작용
+
+연속형 노출의 경우, 비교 수준(예: $G$가 0에서 2로, $E$가 5에서 25로)을 지정하여 RERI를 계산합니다.
+
+```{r}
+# 데이터 시뮬레이션
+set.seed(456)
+N_continuous <- 1000
+
+c1_cont <- rnorm(N_continuous, 50, 10)
+c2_cont <- rbinom(N_continuous, 1, 0.4)
+c3_cont <- rnorm(N_continuous, 25, 5)
+
+# 연속형 노출 G와 E 생성
+g_cont <- rnorm(N_continuous, 10, 2) # 예: 노출 농도
+e_cont <- rnorm(N_continuous, 20, 5) # 예: 노출 기간
+
+# 결과 변수 d 생성 (연속형 노출을 사용한 로지스틱 모델 기반)
+# logit(P(d=1)) = beta0 + beta_g*g + beta_e*e + beta_ge*g*e + ...
+log_odds_cont <- -5 + 0.05*g_cont + 0.02*e_cont + 0.001*g_cont*e_cont + 0.03*c1_cont - 0.2*c2_cont + 0.01*c3_cont
+prob_d_cont <- plogis(log_odds_cont)
+d_cont <- rbinom(N_continuous, 1, prob_d_cont)
+
+mydata_continuous <- data.frame(d = d_cont, g = g_cont, e = e_cont,
+                                c1 = c1_cont, c2 = c2_cont, c3 = c3_cont)
+
+# 비교 수준 지정
+g0 <- 5; g1 <- 15  # g가 5에서 15로 변할 때
+e0 <- 10; e1 <- 30 # e가 10에서 30으로 변할 때
+
+# 로지스틱 회귀 모델 적합
+model_continuous <- glm(d ~ g + e + g:e + c1 + c2 + c3,
+                        family = binomial(link = "logit"), data = mydata_continuous)
+print("Continuous Model Summary:")
+print(summary(model_continuous))
+
+# RERI_OR 계산 (deltaMethod 사용)
+# 사용자님의 강의록에 있는 RERI 공식 사용
+# RERI_OR = exp(gamma1*(g1-g0) + gamma2*(e1-e0) + gamma3*(g1*e1 - g0*e0))
+#           - exp(gamma1*(g1-g0) + gamma3*(g1-g0)*e0)
+#           - exp(gamma2*(e1-e0) + gamma3*(e1-e0)*g0) + 1
+# 여기서 gamma1, gamma2, gamma3는 모델의 g, e, g:e 계수 (b1, b2, b3에 해당)
+reri_formula_cont <- sprintf(
+  "exp( b1*(%f-%f) + b2*(%f-%f) + b3*((%f*%f) - (%f*%f)) ) - exp( b1*(%f-%f) + b3*((%f-%f)*%f) ) - exp( b2*(%f-%f) + b3*((%f-%f)*%f) ) + 1",
+  g1, g0, e1, e0, g1, e1, g0, e0,  # term for OR11
+  g1, g0, g1, g0, e0,              # term for OR10 (effect of G at E=e0)
+  e1, e0, e1, e0, g0               # term for OR01 (effect of E at G=g0)
+)
+param_names_cont <- paste0("b", 0:(length(coef(model_continuous))-1))
+
+cat("\nContinuous Model RERI_OR Calculation:\n")
+cat("Formula used for deltaMethod:\n", reri_formula_cont, "\n")
+reri_continuous <- tryCatch({
+  deltaMethod(model_continuous, reri_formula_cont, parameterNames = param_names_cont)
+}, error = function(e) {
+  cat("Error in deltaMethod for continuous model: ", conditionMessage(e), "\n")
+  cat("Check coefficient names and parameterNames argument.\n")
+  cat("Coefficients from model: ", paste(names(coef(model_continuous)), collapse=", "), "\n")
+  cat("Expected parameterNames: ", paste(param_names_cont, collapse=", "), "\n")
+  return(NULL)
+})
+
+if (!is.null(reri_continuous)) {
+  print(reri_continuous)
+}
+
+```
+
+
+
+### R 코드: 범주형 노출에 대한 가법 상호작용
+
+범주형 노출의 경우, 특정 수준 쌍을 선택하여 이진 노출처럼 분석합니다.
+
+```{r, warning=FALSE, message=FALSE}
+library(tidyverse)
+# 데이터 시뮬레이션
+set.seed(789)
+N_categorical <- 1000
+
+c1_cat <- rnorm(N_categorical, 50, 10)
+c2_cat <- rbinom(N_categorical, 1, 0.4)
+c3_cat <- rnorm(N_categorical, 25, 5)
+
+# 범주형 노출 A (3수준), B (4수준) 생성
+A_cat <- factor(sample(c("A1", "A2", "A3"), N_categorical, replace = TRUE, prob = c(0.4, 0.3, 0.3)))
+B_cat <- factor(sample(c("B1", "B2", "B3", "B4"), N_categorical, replace = TRUE, prob = c(0.25, 0.25, 0.25, 0.25)))
+
+# 결과 변수 d 생성
+# A1&B1을 참조로 가정.
+# A2 vs A1, A3 vs A1 효과, B2 vs B1, B3 vs B1, B4 vs B1 효과
+# A2&B2 에서의 상호작용 등...
+# 단순화를 위해, A와 B의 특정 조합에 따라 확률 부여
+log_odds_cat <- -2.5 +
+  ifelse(A_cat == "A2", 0.5, ifelse(A_cat == "A3", 0.8, 0)) + # A 주효과 (A1 대비)
+  ifelse(B_cat == "B2", 0.3, ifelse(B_cat == "B3", 0.6, ifelse(B_cat == "B4", 0.9, 0))) + # B 주효과 (B1 대비)
+  ifelse(A_cat == "A2" & B_cat == "B4", 0.7, 0) + # A2와 B4 간의 상호작용 (예시)
+  0.01*c1_cat - 0.15*c2_cat + 0.005*c3_cat
+
+prob_d_cat <- plogis(log_odds_cat)
+d_cat <- rbinom(N_categorical, 1, prob_d_cat)
+
+mydata_categorical_full <- data.frame(d = d_cat, A = A_cat, B = B_cat,
+                                      c1 = c1_cat, c2 = c2_cat, c3 = c3_cat)
+
+# 분석: A1 vs A2 (A1이 참조), B1 vs B4 (B1이 참조) 간의 상호작용
+mydata_subset <- mydata_categorical_full %>%
+  filter(A %in% c("A1", "A2") & B %in% c("B1", "B4")) %>%
+  mutate(
+    g = ifelse(A == "A2", 1, 0), # A1 (ref=0) vs A2 (exp=1)
+    e = ifelse(B == "B4", 1, 0)  # B1 (ref=0) vs B4 (exp=1)
+  )
+
+# 로지스틱 회귀 모델 적합 (부분집합 사용)
+model_categorical_subset <- glm(d ~ g + e + g:e + c1 + c2 + c3,
+                                family = binomial(link = "logit"), data = mydata_subset)
+print("Categorical (Subset) Model Summary:")
+print(summary(model_categorical_subset))
+
+# RERI_OR 계산 (deltaMethod 사용 - 이진 노출과 동일한 방식)
+param_names_cat_subset <- paste0("b", 0:(length(coef(model_categorical_subset))-1))
+
+cat("\nCategorical (Subset) Model RERI_OR Calculation:\n")
+reri_categorical_subset <- tryCatch({
+  deltaMethod(model_categorical_subset,
+              "exp(b1 + b2 + b3) - exp(b1) - exp(b2) + 1",
+              parameterNames = param_names_cat_subset)
+}, error = function(e) {
+  cat("Error in deltaMethod for categorical (subset) model: ", conditionMessage(e), "\n")
+  cat("Check coefficient names and parameterNames argument.\n")
+  cat("Coefficients from model: ", paste(names(coef(model_categorical_subset)), collapse=", "), "\n")
+  cat("Expected parameterNames: ", paste(param_names_cat_subset, collapse=", "), "\n")
+  return(NULL)
+})
+
+if (!is.null(reri_categorical_subset)) {
+  print(reri_categorical_subset)
+}
+
+# RERI와 신뢰구간 계산을 위한 대안: `interactionR` 패키지
+# `interactionR` 패키지는 로지스틱 회귀 모델 객체를 직접 사용하여 RERI(ICR로 표시), AP 등 다양한
+# 상호작용 척도와 그 신뢰구간을 계산해 줄 수 있습니다.
+# 사용법 예시:
+# model_for_ir <- glm(d ~ g_bin + e_bin + g_bin:e_bin + c1 + c2 + c3,
+#                     data = mydata_binary, family = binomial)
+# interaction_measures_result <- interactionR::interaction.ratios(model_for_ir)
+# print(interaction_measures_result)
+# 이 패키지는 특히 신뢰구간 계산에 유용합니다.
+# deltaMethod를 직접 사용하는 것보다 복잡한 수식 없이 결과를 얻을 수 있습니다.
+# 단, exposure_names 등의 인자를 모델에 맞게 정확히 지정해야 합니다.
+
+```
+
+
+
+------------------------------------------------------------------------
+
+## 결론
+
+상호작용 분석은 역학 연구에서 공중보건적 의사결정과 기전 이해에 필수적입니다. 가법 상호작용(RERI)은 자원 할당 최적화에 유용하며, 승법 상호작용은 로지스틱 회귀를 통한 통계적 분석에 적합합니다. R을 사용한 실습 코드는 이진, 연속형, 범주형 노출에 대한 RERI 추정을 지원하며, `car` 패키지의 `deltaMethod()`를 활용해 신뢰구간을 계산합니다. 두 척도를 함께 보고하여 종합적인 해석을 제공하는 것이 권장됩니다.
+
+### 참고문헌
+
+-   VanderWeele, T. J., & Knol, M. J. (2014). A Tutorial on Interaction. *Epidemiologic Methods*, 3(1), 33-72.
+-   Rothman, K. J. (1986). *Modern Epidemiology*. Boston, MA: Little, Brown and Company.
+-   Greenland, S., Lash, T. L., & Rothman, K. J. (2008). *Modern Epidemiology*. Philadelphia, PA: Lippincott Williams and Wilkins.
