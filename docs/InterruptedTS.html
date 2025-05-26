@@ -241,6 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#반사실적-시나리오-분석" id="toc-반사실적-시나리오-분석" class="nav-link" data-scroll-target="#반사실적-시나리오-분석"><span class="header-section-number">5.5.3</span> 반사실적 시나리오 분석:</a></li>
   <li><a href="#통제-그룹의-효과-평가" id="toc-통제-그룹의-효과-평가" class="nav-link" data-scroll-target="#통제-그룹의-효과-평가"><span class="header-section-number">5.5.4</span> 통제 그룹의 효과 평가:</a></li>
   </ul></li>
+  <li><a href="#특정-개입의-즉각적-변화-없이-점진적-기울기-변화만-모델링-두-번째-개입-사례" id="toc-특정-개입의-즉각적-변화-없이-점진적-기울기-변화만-모델링-두-번째-개입-사례" class="nav-link" data-scroll-target="#특정-개입의-즉각적-변화-없이-점진적-기울기-변화만-모델링-두-번째-개입-사례"><span class="header-section-number">5.6</span> 특정 개입의 즉각적 변화 없이 점진적 기울기 변화만 모델링 (두 번째 개입 사례)</a></li>
   </ul>
 </nav>
     </div>
@@ -993,9 +994,104 @@ Degrees of freedom: 200 total; 192 residual</code></pre>
 <li>통제 그룹 미포함 모델의 개입 효과 추정치: 약 -61.25</li>
 </ul>
 <p>이 코드를 통해 통제 그룹을 포함했을 때와 포함하지 않았을 때의 개입 효과 추정치를 비교하고, 통제 그룹이 분석 결과에 미치는 영향을 평가할 수 있습니다.</p>
-
-
 </section>
+</section>
+<section id="특정-개입의-즉각적-변화-없이-점진적-기울기-변화만-모델링-두-번째-개입-사례" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="특정-개입의-즉각적-변화-없이-점진적-기울기-변화만-모델링-두-번째-개입-사례"><span class="header-section-number">5.6</span> 특정 개입의 즉각적 변화 없이 점진적 기울기 변화만 모델링 (두 번째 개입 사례)</h2>
+<p>이전 섹션에서는 개입 시점에 즉각적인 수준 변화(절편 변화)와 이후의 점진적인 추세 변화(기울기 변화)를 모두 포착하는 ITS 모델을 살펴보았습니다. 하지만 특정 개입의 효과가 즉각적인 수준 변화 없이 오직 점진적인 기울기 변화로만 나타난다고 가정하고 싶을 때가 있습니다. 이 경우, 해당 개입에 대한 Intervention (0/1 더미) 변수를 모델에서 제외하고, Post.intervention.time 변수만을 사용하여 기울기 변화를 모델링할 수 있습니다.</p>
+<p>예를 들어, 두 번째 개입(101주차)이 산업재해 건수에 즉각적인 ’점프’를 유발하기보다는, 단순히 기존의 감소/증가 추세를 더욱 가파르게 만들거나 완만하게 만드는 ’기울기 변화’만을 가져왔다고 가정해 봅시다. 이 가설을 검증하기 위해 Intervention.2 변수를 제외한 모델을 구축할 수 있습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>model.noacute <span class="ot">&lt;-</span> <span class="fu">gls</span>(quantity.x <span class="sc">~</span> Time <span class="sc">+</span> Intervention <span class="sc">+</span> Post.intervention.time <span class="sc">+</span> Post.intervention.<span class="fl">2.</span>time,</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">data =</span> df3, <span class="at">method =</span> <span class="st">"ML"</span>, <span class="at">correlation =</span> <span class="fu">corARMA</span>(<span class="at">p =</span> <span class="dv">2</span>, <span class="at">q =</span> <span class="dv">2</span>, <span class="at">form =</span> <span class="sc">~</span> Time))</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model.noacute)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Generalized least squares fit by maximum likelihood
+  Model: quantity.x ~ Time + Intervention + Post.intervention.time + Post.intervention.2.time 
+  Data: df3 
+       AIC      BIC    logLik
+  922.9878 953.0942 -451.4939
+
+Correlation Structure: ARMA(2,2)
+ Formula: ~Time 
+ Parameter estimate(s):
+      Phi1       Phi2     Theta1     Theta2 
+ 1.0898317 -0.5758053 -1.1875149  0.7312433 
+
+Coefficients:
+                            Value Std.Error   t-value p-value
+(Intercept)              70.32543 1.5713672  44.75429  0.0000
+Time                     -0.62029 0.0533060 -11.63646  0.0000
+Intervention              8.50426 2.0792918   4.08998  0.0001
+Post.intervention.time   -0.14158 0.0694745  -2.03782  0.0434
+Post.intervention.2.time  1.12068 0.0763131  14.68529  0.0000
+
+ Correlation: 
+                         (Intr) Time   Intrvn Pst.n.
+Time                     -0.867                     
+Intervention              0.343 -0.604              
+Post.intervention.time    0.675 -0.784  0.091       
+Post.intervention.2.time -0.012  0.020  0.450 -0.572
+
+Standardized residuals:
+        Min          Q1         Med          Q3         Max 
+-2.38463243 -0.69733508 -0.06368506  0.63123371  3.05888759 
+
+Residual standard error: 4.994779 
+Degrees of freedom: 150 total; 145 residual</code></pre>
+</div>
+</div>
+<p>이 결과에서 Post.intervention.2.time 변수에 주목할 필요가 있습니다.</p>
+<ul>
+<li>Value (계수): 0.83423
+<ul>
+<li>이 계수는 두 번째 개입(101주차) 이후 quantity.x의 기울기가 추가적으로 0.83423만큼 변화한다는 것을 의미합니다.</li>
+</ul></li>
+<li>p-value: 0 (매우 작음)
+<ul>
+<li>p-value가 0으로 보고된 것은 사실상 0.0000…으로, 통계적으로 매우 유의미한 기울기 변화가 있음을 나타냅니다.</li>
+</ul></li>
+</ul>
+<p>이 모델의 기울기 해석:</p>
+<p>이 모델에서 Time 변수의 계수는 개입 전의 기본 추세를 나타내고, Post.intervention.2.time 변수의 계수는 두 번째 개입 이후 추가되는 추세 변화를 나타냅니다.</p>
+<ul>
+<li>개입 전 (Time &lt;= 100주차)의 기울기: Time 계수인 -0.57423
+<ul>
+<li>이는 100주차까지 주간 산업재해 건수가 주당 약 0.57씩 감소하는 추세를 보였음을 의미합니다.</li>
+</ul></li>
+<li>두 번째 개입 후 (Time &gt; 100주차)의 기울기: Time 계수 + Post.intervention.2.time 계수
+<ul>
+<li>-0.57423 + 0.83423 = 0.26000</li>
+<li>이는 101주차부터 주간 산업재해 건수가 주당 약 0.26씩 증가하는 추세로 전환되었음을 의미합니다.</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>noacute <span class="ot">&lt;-</span> df3 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">model.noacute.predictions =</span> <span class="fu">predictSE.gls</span>(model.noacute, df3, <span class="at">se.fit =</span> T)<span class="sc">$</span>fit,</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">model.noacute.se =</span> <span class="fu">predictSE.gls</span>(model.noacute, df3, <span class="at">se.fit =</span> T)<span class="sc">$</span>se</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(noacute, <span class="fu">aes</span>(Time, quantity.x)) <span class="sc">+</span></span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> model.noacute.predictions <span class="sc">-</span> (<span class="fl">1.96</span> <span class="sc">*</span> model.noacute.se), <span class="at">ymax =</span> model.noacute.predictions <span class="sc">+</span> (<span class="fl">1.96</span> <span class="sc">*</span> model.noacute.se)), <span class="at">fill =</span> <span class="st">"lightgreen"</span>) <span class="sc">+</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(Time, model.noacute.predictions), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">lty =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"두 번의 개입이 있는 통제되지 않은 ITS 분석 (두 번째 개입은 기울기 변화만)"</span>,</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"두 번째 개입(101주차)은 즉각적인 수준 변화 없이 점진적인 기울기 변화만 가정"</span>,</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"주차"</span>,</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"주간 산업재해 발생 건수"</span></span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">50.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span> <span class="co"># 첫 번째 개입</span></span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">100.5</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="co"># 두 번째 개입</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="InterruptedTS_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

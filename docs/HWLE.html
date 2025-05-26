@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>7&nbsp; 건강 근로 기대 수명(HWLE) – 직업환경연구방법</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Interraction_1.html" rel="next">
+<link href="./Jobstress.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a8378a0342da607bf6aa9ac04725c156.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-424117795b1f6bc5b90be9cdae97709d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./HWLE.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">건강 근로 기대 수명(HWLE)</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">직업환경연구방법</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소개</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">개요</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./MetaAnalysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">메타분석</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dose_Response_Model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Dose Response Model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./timeseries_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">시계열분석</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./InterruptedTS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">중단된 시계열 분석</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Jobstress.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">job stress questionnaires</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./HWLE.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">건강 근로 기대 수명(HWLE)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Interraction_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">상호작용</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#소개" id="toc-소개" class="nav-link active" data-scroll-target="#소개"><span class="header-section-number">7.1</span> 소개</a></li>
+  <li><a href="#데이터-준비-및-전처리" id="toc-데이터-준비-및-전처리" class="nav-link" data-scroll-target="#데이터-준비-및-전처리"><span class="header-section-number">7.2</span> 데이터 준비 및 전처리</a>
+  <ul class="collapse">
+  <li><a href="#필요한-패키지-로드" id="toc-필요한-패키지-로드" class="nav-link" data-scroll-target="#필요한-패키지-로드"><span class="header-section-number">7.2.1</span> 필요한 패키지 로드</a></li>
+  <li><a href="#시뮬레이션-데이터-불러오기" id="toc-시뮬레이션-데이터-불러오기" class="nav-link" data-scroll-target="#시뮬레이션-데이터-불러오기"><span class="header-section-number">7.2.2</span> 시뮬레이션 데이터 불러오기</a></li>
+  </ul></li>
+  <li><a href="#데이터-주요-변수-설명" id="toc-데이터-주요-변수-설명" class="nav-link" data-scroll-target="#데이터-주요-변수-설명"><span class="header-section-number">7.3</span> 데이터 주요 변수 설명</a>
+  <ul class="collapse">
+  <li><a href="#state-변수-생성-및-데이터-정리" id="toc-state-변수-생성-및-데이터-정리" class="nav-link" data-scroll-target="#state-변수-생성-및-데이터-정리"><span class="header-section-number">7.3.1</span> 1.3 state 변수 생성 및 데이터 정리</a></li>
+  </ul></li>
+  <li><a href="#관찰된-hwle-계산" id="toc-관찰된-hwle-계산" class="nav-link" data-scroll-target="#관찰된-hwle-계산"><span class="header-section-number">7.4</span> 관찰된 HWLE 계산</a>
+  <ul class="collapse">
+  <li><a href="#데이터-필터링-및-hwle-계산" id="toc-데이터-필터링-및-hwle-계산" class="nav-link" data-scroll-target="#데이터-필터링-및-hwle-계산"><span class="header-section-number">7.4.1</span> 데이터 필터링 및 HWLE 계산</a></li>
+  </ul></li>
+  <li><a href="#관찰된-hwle-시각화" id="toc-관찰된-hwle-시각화" class="nav-link" data-scroll-target="#관찰된-hwle-시각화"><span class="header-section-number">7.5</span> 관찰된 HWLE 시각화</a>
+  <ul class="collapse">
+  <li><a href="#전체-인구의-최종-hwle-분포-히스토그램" id="toc-전체-인구의-최종-hwle-분포-히스토그램" class="nav-link" data-scroll-target="#전체-인구의-최종-hwle-분포-히스토그램"><span class="header-section-number">7.5.1</span> 전체 인구의 최종 HWLE 분포 (히스토그램)</a></li>
+  <li><a href="#직종별-최종-hwle-분포-비교-박스-플롯" id="toc-직종별-최종-hwle-분포-비교-박스-플롯" class="nav-link" data-scroll-target="#직종별-최종-hwle-분포-비교-박스-플롯"><span class="header-section-number">7.5.2</span> 직종별 최종 HWLE 분포 비교 (박스 플롯)</a></li>
+  <li><a href="#사업장-규모별-최종-hwle-분포-비교-박스-플롯" id="toc-사업장-규모별-최종-hwle-분포-비교-박스-플롯" class="nav-link" data-scroll-target="#사업장-규모별-최종-hwle-분포-비교-박스-플롯"><span class="header-section-number">7.5.3</span> 사업장 규모별 최종 HWLE 분포 비교 (박스 플롯)</a></li>
+  <li><a href="#직종-및-사업장-규모-조합별-hwle-분포-비교" id="toc-직종-및-사업장-규모-조합별-hwle-분포-비교" class="nav-link" data-scroll-target="#직종-및-사업장-규모-조합별-hwle-분포-비교"><span class="header-section-number">7.5.4</span> 직종 및 사업장 규모 조합별 HWLE 분포 비교</a></li>
+  </ul></li>
+  <li><a href="#다중상태모델-hwle-기대치-추정" id="toc-다중상태모델-hwle-기대치-추정" class="nav-link" data-scroll-target="#다중상태모델-hwle-기대치-추정"><span class="header-section-number">7.6</span> 다중상태모델 HWLE 기대치 추정</a>
+  <ul class="collapse">
+  <li><a href="#이론적-배경-다중상태모델-msm-기초" id="toc-이론적-배경-다중상태모델-msm-기초" class="nav-link" data-scroll-target="#이론적-배경-다중상태모델-msm-기초"><span class="header-section-number">7.6.1</span> 이론적 배경: 다중상태모델 (MSM) 기초</a></li>
+  <li><a href="#msm을-위한-데이터-준비-및-q-행렬-정의" id="toc-msm을-위한-데이터-준비-및-q-행렬-정의" class="nav-link" data-scroll-target="#msm을-위한-데이터-준비-및-q-행렬-정의"><span class="header-section-number">7.6.2</span> msm을 위한 데이터 준비 및 Q 행렬 정의</a></li>
+  <li><a href="#기본-msm-모델-적합-보정-변수-없이" id="toc-기본-msm-모델-적합-보정-변수-없이" class="nav-link" data-scroll-target="#기본-msm-모델-적합-보정-변수-없이"><span class="header-section-number">7.6.3</span> 기본 msm 모델 적합 (보정 변수 없이)</a></li>
+  <li><a href="#보정-변수를-포함한-msm-모델-적합" id="toc-보정-변수를-포함한-msm-모델-적합" class="nav-link" data-scroll-target="#보정-변수를-포함한-msm-모델-적합"><span class="header-section-number">7.6.4</span> 보정 변수를 포함한 msm 모델 적합<br>
+  </a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">건강 근로 기대 수명(HWLE)</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="소개" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="소개"><span class="header-section-number">7.1</span> 소개</h2>
+<p>건강 근로 기대 수명(Healthy Working Life Expectancy, HWLE)은 특정 연령의 개인이 앞으로 얼마나 더 건강하게 일할 것으로 기대되는 평균 기간을 나타내는 지표입니다. 이 지표는 개인의 삶의 질 평가뿐만 아니라, 특히 고령화 사회에서 국가의 노동력 확보, 연금 정책, 복지 시스템 설계에 있어 핵심적인 정보를 제공합니다. 세계보건기구(WHO)는 ’건강’을 단순히 질병이 없는 상태가 아니라 신체적, 정신적, 사회적으로 양호한 상태로 정의하며 , HWLE는 이러한 포괄적인 건강 개념을 근로 능력과 결합하여 평가합니다. HWLE의 이해는 인구 집단의 건강 상태 변화를 모니터링하고, 건강 불평등을 평가하며, 공중 보건 정책의 효과를 측정하는 데 중요합니다</p>
+<p>이 강의록은 R 프로그래밍 환경을 활용하여 시뮬레이션 데이터를 기반으로 HWLE를 분석하는 과정을 단계별로 다룹니다. 데이터 준비부터 시작하여, 관찰된 HWLE 계산 및 시각화, 그리고 다중상태모델(Multi-State Model, MSM)을 이용한 모델 기반 HWLE 기대치 추정의 기초까지 실습합니다.</p>
+<p>주요 내용은 다음과 같습니다:</p>
+<ul>
+<li>데이터 준비 및 전처리: 시뮬레이션 데이터를 불러오고, 분석에 적합한 형태로 가공합니다. 이 과정에는 필요한 R 패키지 로드, 데이터 구조 확인, 그리고 분석에 필요한 ‘상태(state)’ 변수 생성이 포함됩니다.</li>
+<li>tidyverse을 이용한 관찰된 HWLE 계산: 각 개인별로 실제로 건강하게 일한 기간, 즉 관찰된 HWLE를 계산합니다. 이는 데이터에 기록된 각 개인의 경험을 직접적으로 요약하는 기술적(descriptive) 접근 방식입니다.</li>
+<li>ggplot2를 이용한 관찰된 HWLE 시각화: 계산된 관찰된 HWLE의 분포를 시각화하고, 직종이나 사업장 규모와 같은 보정 변수에 따른 HWLE의 차이를 탐색합니다. ggplot2 패키지를 활용하여 다양한 그래프(히스토그램, 박스 플롯, 막대 그래프)를 생성합니다.</li>
+<li>msm 패키지를 이용한 HWLE 기대치 추정: 다중상태모델을 이용하여 모델 기반의 HWLE 기대치를 추정하는 기초적인 방법을 소개합니다. 이는 개인들이 시간에 따라 여러 건강 및 근로 상태를 어떻게 전환하는지 모델링하여, 특정 연령 및 특성을 가진 집단의 평균적인 HWLE를 예측하는 접근법입니다.</li>
+</ul>
+</section>
+<section id="데이터-준비-및-전처리" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="데이터-준비-및-전처리"><span class="header-section-number">7.2</span> 데이터 준비 및 전처리</h2>
+<section id="필요한-패키지-로드" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="필요한-패키지-로드"><span class="header-section-number">7.2.1</span> 필요한 패키지 로드</h3>
+<p>분석에 필요한 <code>tidyverse</code> (데이터 전처리 및 시각화)와 <code>msm</code> (다중상태모델) 패키지를 로드합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(tidyverse)) <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(msm)) <span class="fu">install.packages</span>(<span class="st">"msm"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(msm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="시뮬레이션-데이터-불러오기" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="시뮬레이션-데이터-불러오기"><span class="header-section-number">7.2.2</span> 시뮬레이션 데이터 불러오기</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://raw.githubusercontent.com/jinhaslab/opendata/main/data/sim_data_cov_final.rds"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(url, <span class="st">"data/sim_data_cov_final.rds"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>sim_data <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/sim_data_cov_final.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>실습을 위해 만들어 놓은 <code>"sim_data_cov_final.rds"</code> 데이터를 불러옵니다. 이 데이터는 각 개인의 시간 경과에 따른 건강 상태, 근로 상태, 사망 여부 및 보정 변수인 직종(<code>occupation</code>)과 사업장 규모(<code>workplace_size</code>) 정보를 포함합니다.</p>
+</section>
+</section>
+<section id="데이터-주요-변수-설명" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="데이터-주요-변수-설명"><span class="header-section-number">7.3</span> 데이터 주요 변수 설명</h2>
+<p>데이터의 구조를 이해하는 것은 분석의 정확성을 위해 필수적입니다. 각 변수는 다음과 같은 정보를 담고 있습니다.</p>
+<ul>
+<li><strong>person_id</strong>: 각 개인을 고유하게 식별하는 개인 식별자입니다.</li>
+<li><strong>wave</strong>: 데이터가 수집된 시점 또는 관찰 웨이브를 나타냅니다.</li>
+<li><strong>age</strong>: 개인의 연령입니다.</li>
+<li><strong>health_status</strong>: 건강 상태를 나타내며, 0은 ‘건강하지 않음’, 1은 ’건강함’을 의미합니다.</li>
+<li><strong>work_status</strong>: 근로 상태를 나타내며, 0은 ‘비근로’, 1은 ’근로 중’을 의미합니다.</li>
+<li><strong>mortality_status</strong>: 사망 여부를 나타내며, 0은 ‘생존’, 1은 ’사망’을 의미합니다.</li>
+<li><strong>occupation</strong>: 개인의 직종을 나타내는 범주형 변수입니다 (“사무직”, “서비스직”, “제조업”).</li>
+<li><strong>workplace_size</strong>: 개인의 사업장 규모를 나타내는 범주형 변수입니다 (“50인 이하”, “50인 이상”).</li>
+</ul>
+<p>이러한 변수들을 조합하여 HWLE 분석의 핵심이 되는 ’상태(state)’를 정의하게 됩니다.</p>
+<section id="state-변수-생성-및-데이터-정리" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="state-변수-생성-및-데이터-정리"><span class="header-section-number">7.3.1</span> 1.3 state 변수 생성 및 데이터 정리</h3>
+<p>다중상태모델(MSM) 분석을 위해서는 개인의 상태를 명확하게 정의하는 단일 변수가 필요합니다. <code>msm</code> 패키지에서 사용하기 용이하도록, 기존의 <code>health_status</code>, <code>work_status</code>, <code>mortality_status</code> 변수를 조합하여 5가지 가능한 상태를 나타내는 <code>state</code> 변수를 생성합니다. 각 상태는 개인의 건강 및 근로 상황을 포괄적으로 나타냅니다.</p>
+<section id="상태-정의" class="level4" data-number="7.3.1.1">
+<h4 data-number="7.3.1.1" class="anchored" data-anchor-id="상태-정의"><span class="header-section-number">7.3.1.1</span> 상태 정의</h4>
+<ul>
+<li><strong>상태 1</strong>: 건강하며 근로 (Healthy and in Work, HW) - <code>health_status == 1</code> 그리고 <code>work_status == 1</code></li>
+<li><strong>상태 2</strong>: 건강하며 비근로 (Healthy and Not in Work, HNW) - <code>health_status == 1</code> 그리고 <code>work_status == 0</code></li>
+<li><strong>상태 3</strong>: 건강하지 않으나 근로 (Not Healthy and in Work, NHW) - <code>health_status == 0</code> 그리고 <code>work_status == 1</code></li>
+<li><strong>상태 4</strong>: 건강하지 않으며 비근로 (Not Healthy and Not in Work, NHNW) - <code>health_status == 0</code> 그리고 <code>work_status == 0</code></li>
+<li><strong>상태 5</strong>: 사망 (Dead) - <code>mortality_status == 1</code></li>
+</ul>
+<p>이러한 상태 정의는 HWLE 분석의 핵심입니다. 상태 1(HW)은 개인이 ‘건강하게 일하고 있는’ 상태를 의미하며, HWLE는 이 상태에서 보내는 시간의 기댓값으로 정의될 수 있습니다. 상태 5(Dead)는 흡수 상태(absorbing state)로, 한 번 이 상태에 진입하면 다른 상태로 전이할 수 없습니다. 나머지 상태들은 과도적 상태(transient state)입니다.</p>
+</section>
+<section id="r-코드-state-변수-생성" class="level4" data-number="7.3.1.2">
+<h4 data-number="7.3.1.2" class="anchored" data-anchor-id="r-코드-state-변수-생성"><span class="header-section-number">7.3.1.2</span> R 코드: state 변수 생성</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sim_data_processed_manual <span class="ot">&lt;-</span> sim_data <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">state =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      mortality_status <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">5</span>, <span class="co"># 사망 상태</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>      health_status <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> work_status <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">1</span>, <span class="co"># Healthy and in work</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>      health_status <span class="sc">==</span> <span class="dv">1</span> <span class="sc">&amp;</span> work_status <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">2</span>, <span class="co"># Healthy and not in work</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      health_status <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> work_status <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="dv">3</span>, <span class="co"># Not healthy and in work</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>      health_status <span class="sc">==</span> <span class="dv">0</span> <span class="sc">&amp;</span> work_status <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="dv">4</span>, <span class="co"># Not healthy and not in work</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA_real_</span> <span class="co"># 혹시 모를 예외 처리</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(person_id, wave, age, state, occupation, workplace_size) <span class="sc">%&gt;%</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(state)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(person_id, wave)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 처리된 데이터 확인</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sim_data_processed_manual)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  person_id wave age state occupation workplace_size
+1         1    1  50     1     제조업      50인 이하
+2         1    2  52     5     제조업      50인 이하
+3         2    1  50     1     제조업      50인 이상
+4         2    2  52     3     제조업      50인 이상
+5         2    3  54     3     제조업      50인 이상
+6         2    4  56     3     제조업      50인 이상</code></pre>
+</div>
+</div>
+<p>이렇게 생성된 <code>sim_data_processed_manual</code> 데이터프레임은 각 개인의 시간에 따른 상태 변화를 명확하게 나타내며, 이후 <code>dplyr</code>을 이용한 관찰된 HWLE 계산과 <code>msm</code> 패키지를 이용한 모델 기반 HWLE 추정에 사용됩니다.</p>
+</section>
+</section>
+</section>
+<section id="관찰된-hwle-계산" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="관찰된-hwle-계산"><span class="header-section-number">7.4</span> 관찰된 HWLE 계산</h2>
+<p>이 파트에서는 각 개인이 실제로 ‘건강하며 근로’ 상태(<code>state == 1</code>)에서 얼마나 시간을 보냈는지, 즉 ’관찰된 HWLE’를 계산합니다. 이는 각 개인의 실제 경험을 바탕으로 한 기술 통계적 접근입니다.</p>
+<section id="데이터-필터링-및-hwle-계산" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="데이터-필터링-및-hwle-계산"><span class="header-section-number">7.4.1</span> 데이터 필터링 및 HWLE 계산</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 분석 시작 연령(50세) 이상 데이터 필터링 및 정렬</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>mm <span class="ot">&lt;-</span> sim_data_processed_manual <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age <span class="sc">&gt;=</span> <span class="dv">50</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(person_id, wave)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>다음으로, 각 관찰 웨이브(wave) 사이의 시간 간격을 정의합니다. 본 시뮬레이션에서는 한 웨이브가 2년을 나타낸다고 가정합니다. 이 wave_interval은 각 개인이 상태 1에 머무를 때 HWLE에 기여하는 시간을 계산하는 데 사용됩니다. 이제 각 개인별로, 각 웨이브에서 상태가 1(‘건강하며 근로’)이면 wave_interval만큼 HWLE에 기여하고, 그렇지 않으면 0만큼 기여하도록 hwle_contribution 변수를 생성합니다. 그리고 cumsum() 함수를 사용하여 각 시점까지의 누적 HWLE(cumulative_hwle)를 계산합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 웨이브 간격 정의 (한 웨이브 당 2년)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>wave_interval <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 각 개인별, 각 웨이브별 HWLE 기여분 및 누적 HWLE 계산</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>mm_cumulative <span class="ot">&lt;-</span> mm <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(person_id) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">hwle_contribution =</span> <span class="fu">ifelse</span>(state <span class="sc">==</span> <span class="dv">1</span>, wave_interval, <span class="dv">0</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">cumulative_hwle =</span> <span class="fu">cumsum</span>(hwle_contribution)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 각 개인의 최종 HWLE 계산</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>mm1 <span class="ot">&lt;-</span> mm <span class="sc">%&gt;%</span> </span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(person_id, occupation, workplace_size) <span class="sc">%&gt;%</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">hwle_contribution =</span> <span class="fu">ifelse</span>(state <span class="sc">==</span> <span class="dv">1</span>, wave_interval, <span class="dv">0</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">final_hwle =</span> <span class="fu">sum</span>(hwle_contribution),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 결과 확인</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mm1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  person_id occupation workplace_size final_hwle
+      &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;               &lt;dbl&gt;
+1         1 제조업     50인 이하               2
+2         2 제조업     50인 이상              12
+3         3 사무직     50인 이하              12
+4         4 서비스직   50인 이하               6
+5         5 사무직     50인 이하              10
+6         6 서비스직   50인 이하               2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mm1<span class="sc">$</span>final_hwle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  0.000   2.000   6.000   7.302  10.000  30.000 </code></pre>
+</div>
+</div>
+<p><code>mm1</code> 데이터프레임의 <code>final_hwle</code> 변수는 각 개인이 50세 이후 관찰 기간 동안 ‘건강하며 근로’ 상태에서 보낸 총 햇수를 나타냅니다.</p>
+</section>
+</section>
+<section id="관찰된-hwle-시각화" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="관찰된-hwle-시각화"><span class="header-section-number">7.5</span> 관찰된 HWLE 시각화</h2>
+<p><code>dplyr</code>을 통해 계산된 개인별 최종 HWLE(<code>final_hwle</code>)를 사용하여, 데이터의 분포 특성과 주요 보정 변수(직종, 사업장 규모)에 따른 차이를 시각적으로 탐색합니다.</p>
+<section id="전체-인구의-최종-hwle-분포-히스토그램" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="전체-인구의-최종-hwle-분포-히스토그램"><span class="header-section-number">7.5.1</span> 전체 인구의 최종 HWLE 분포 (히스토그램)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mm1 <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> final_hwle)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"전체 인구의 최종 HWLE 분포"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"최종 HWLE (년)"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"빈도 (사람 수)"</span>) <span class="sc">+</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="HWLE_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="직종별-최종-hwle-분포-비교-박스-플롯" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="직종별-최종-hwle-분포-비교-박스-플롯"><span class="header-section-number">7.5.2</span> 직종별 최종 HWLE 분포 비교 (박스 플롯)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mm1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> occupation, <span class="at">y =</span> final_hwle, <span class="at">fill =</span> occupation)) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"직종별 최종 HWLE 분포 비교"</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"직종"</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"최종 HWLE (년)"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"직종"</span>) <span class="sc">+</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="HWLE_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="사업장-규모별-최종-hwle-분포-비교-박스-플롯" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="사업장-규모별-최종-hwle-분포-비교-박스-플롯"><span class="header-section-number">7.5.3</span> 사업장 규모별 최종 HWLE 분포 비교 (박스 플롯)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mm1 <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> workplace_size, <span class="at">y =</span> final_hwle, <span class="at">fill =</span> workplace_size)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"사업장 규모별 최종 HWLE 분포 비교"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"사업장 규모"</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"최종 HWLE (년)"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"사업장 규모"</span>) <span class="sc">+</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="HWLE_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="직종-및-사업장-규모-조합별-hwle-분포-비교" class="level3" data-number="7.5.4">
+<h3 data-number="7.5.4" class="anchored" data-anchor-id="직종-및-사업장-규모-조합별-hwle-분포-비교"><span class="header-section-number">7.5.4</span> 직종 및 사업장 규모 조합별 HWLE 분포 비교</h3>
+<section id="조합별-박스-플롯" class="level4" data-number="7.5.4.1">
+<h4 data-number="7.5.4.1" class="anchored" data-anchor-id="조합별-박스-플롯"><span class="header-section-number">7.5.4.1</span> 조합별 박스 플롯</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>mm1 <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> occupation, <span class="at">y =</span> final_hwle, <span class="at">fill =</span> workplace_size)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.8</span>)) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"직종 및 사업장 규모에 따른 최종 HWLE 분포"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"직종"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"최종 HWLE (년)"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"사업장 규모"</span>) <span class="sc">+</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="HWLE_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="조합별-평균-막대-그래프-표준오차-포함" class="level4" data-number="7.5.4.2">
+<h4 data-number="7.5.4.2" class="anchored" data-anchor-id="조합별-평균-막대-그래프-표준오차-포함"><span class="header-section-number">7.5.4.2</span> 조합별 평균 막대 그래프 (표준오차 포함)</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mm1_summary_interaction <span class="ot">&lt;-</span> mm1 <span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(occupation, workplace_size) <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_final_hwle =</span> <span class="fu">mean</span>(final_hwle),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_final_hwle =</span> <span class="fu">sd</span>(final_hwle),</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">se_final_hwle =</span> sd_final_hwle <span class="sc">/</span> <span class="fu">sqrt</span>(n),</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">'drop'</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>mm1_summary_interaction <span class="sc">%&gt;%</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> occupation, <span class="at">y =</span> mean_final_hwle, <span class="at">fill =</span> workplace_size)) <span class="sc">+</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>), <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> mean_final_hwle <span class="sc">-</span> se_final_hwle, <span class="at">ymax =</span> mean_final_hwle <span class="sc">+</span> se_final_hwle),</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.9</span>)) <span class="sc">+</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"직종 및 사업장 규모별 평균 최종 HWLE"</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"직종"</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"평균 최종 HWLE (년)"</span>,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"사업장 규모"</span>) <span class="sc">+</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="HWLE_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="다중상태모델-hwle-기대치-추정" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="다중상태모델-hwle-기대치-추정"><span class="header-section-number">7.6</span> 다중상태모델 HWLE 기대치 추정</h2>
+<p>이전 파트에서는 각 개인의 실제 관찰 기록을 바탕으로 HWLE를 계산하고 시각화하는 기술적(descriptive) 분석을 수행했습니다. 이번 파트에서는 msm 패키지를 사용하여 다중상태모델(Multi-State Model, MSM)을 구축하고, 이를 통해 모델 기반의 HWLE ’기대치’를 추정하는 방법을 살펴봅니다. 이 접근법은 개인들이 시간에 따라 여러 건강 및 근로 상태 간을 어떻게 전이하는지를 확률적으로 모델링하여, 특정 인구 집단 또는 하위 그룹의 평균적인 HWLE를 예측합니다.</p>
+<section id="이론적-배경-다중상태모델-msm-기초" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="이론적-배경-다중상태모델-msm-기초"><span class="header-section-number">7.6.1</span> 이론적 배경: 다중상태모델 (MSM) 기초</h3>
+<ul>
+<li><strong>다중상태모델 (MSM)</strong>: 개인이 시간이 지남에 따라 유한한 수의 상태(state)들 사이를 이동하는 과정을 모델링합니다.</li>
+<li><strong>상태 공간</strong>: {1:HW, 2:HNW, 3:NHW, 4:NHNW, 5:Dead}</li>
+<li><strong>과도적 상태 및 흡수 상태</strong>: HW, HNW, NHW, NHNW는 과도적 상태, Dead는 흡수 상태.</li>
+<li><strong>마르코프 가정</strong>: 미래는 현재 상태에만 의존.</li>
+<li><strong>전이 강도 (q_rs)</strong>: 상태 r에서 s로의 순간적인 전이율.</li>
+<li><strong>Q 행렬</strong>: 모든 전이 강도를 포함.</li>
+<li><strong>전이 확률 (p_rs(t))</strong>: 시간 t 동안의 전이 확률.</li>
+<li><strong>시간 동질성</strong>: 전이 강도가 시간에 따라 변하지 않음.</li>
+</ul>
+<p>여기서는 이해를 돕기 위해 상태가 2개인 매우 간단한 모델을 사용하겠습니다. 실제 HWLE 모델은 상태가 5개로 더 복잡하지만, 기본 원리는 동일합니다.</p>
+<p>상황 설정: 두 가지 상태 - ‘일함(W)’과 ’일하지 않음(NW)’</p>
+<p>상태 1: W (Working, 일함) 상태 2: NW (Not Working, 일하지 않음)</p>
+<blockquote class="blockquote">
+<ol type="1">
+<li>Q-matrix (전이 강도 행렬) 정의</li>
+</ol>
+</blockquote>
+<p>Q-matrix는 한 상태에서 다른 상태로 얼마나 빠르게 변하는지를 나타냅니다. <span class="math display">\[Q = \begin{pmatrix} q_{WW} &amp; q_{WN} \\ q_{NW} &amp; q_{NNW} \end{pmatrix}\]</span></p>
+<p><span class="math inline">\(q_{WN}\)</span>: ‘일함(W)’ 상태에서 ‘일하지 않음(NW)’ 상태로의 순간적인 전이율 (예: <span class="math inline">\(\alpha\)</span>) <span class="math inline">\(q_{NW}\)</span>: ‘일하지 않음(NW)’ 상태에서 ‘일함(W)’ 상태로의 순간적인 전이율 (예: <span class="math inline">\(\beta\)</span>) 행의 합은 0이 되어야 하므로, 대각선 요소는 다음과 같습니다:</p>
+<p><span class="math display">\[q_{WW} = -q_{WN} = -\alpha\]</span></p>
+<p><span class="math display">\[q_{NNW} = -q_{NW} = -\beta\]</span> 따라서 Q-matrix는 이렇게 표현됩니다:</p>
+<p><span class="math display">\[Q = \begin{pmatrix} -\alpha &amp; \alpha \\ \beta &amp; -\beta \end{pmatrix}\]</span></p>
+<p>예시 값:</p>
+<p><span class="math inline">\(\alpha = 0.1\)</span> (매년 ‘일함’ 상태의 사람 중 10%가 ‘일하지 않음’ 상태로 바뀔 수 있는 순간적인 비율) <span class="math inline">\(\beta = 0.05\)</span> (매년 ‘일하지 않음’ 상태의 사람 중 5%가 ‘일함’ 상태로 바뀔 수 있는 순간적인 비율) 그러면 Q-matrix는: <span class="math display">\[Q = \begin{pmatrix} -0.1 &amp; 0.1 \\ 0.05 &amp; -0.05 \end{pmatrix}\]</span></p>
+<blockquote class="blockquote">
+<ol start="2" type="1">
+<li>P(t) (전이 확률 행렬) 계산</li>
+</ol>
+</blockquote>
+<p>Q-matrix는 순간적인 변화율이고, 우리가 실제로 특정 기간 t 동안 한 상태에서 다른 상태로 변할 확률을 알고 싶다면 <strong>전이 확률 행렬 P(t)</strong>를 계산해야 합니다. 이 둘의 관계는 다음과 같습니다:</p>
+<p><span class="math display">\[P(t) = \exp(tQ)\]</span></p>
+<p>여기서 <span class="math display">\[\exp()\]</span>는 행렬 지수 함수(matrix exponential)입니다. 이 계산은 복잡할 수 있지만, 2x2 경우에 대한 공식은 다음과 같습니다 (또는 수치적으로 계산합니다):</p>
+<p><span class="math display">\[p_{WW}(t)\]</span>: 시간 t 이후에도 계속 ‘일함(W)’ 상태일 확률 <span class="math display">\[p_{WN}(t)\]</span>: 시간 t 이후 ‘일함(W)’에서 ’일하지 않음(NW)’ 상태로 변할 확률 <span class="math display">\[p_{NW}(t)\]</span>: 시간 t 이후 ‘일하지 않음(NW)’에서 ’일함(W)’ 상태로 변할 확률 <span class="math display">\[p_{NNW}(t)\]</span>: 시간 t 이후에도 계속 ‘일하지 않음(NW)’ 상태일 확률</p>
+<p>위의 <span class="math display">\[\alpha, \beta\]</span>를 사용한 Q-matrix에 대한 <span class="math display">\[P(t)\]</span>의 각 요소 공식은 다음과 같습니다:</p>
+<p><span class="math display">\[p_{WW}(t) = \frac{\beta}{\alpha+\beta} + \frac{\alpha}{\alpha+\beta} e^{-(\alpha+\beta)t}\]</span> <span class="math display">\[p_{WN}(t) = \frac{\alpha}{\alpha+\beta} - \frac{\alpha}{\alpha+\beta} e^{-(\alpha+\beta)t}\]</span></p>
+<p>직관적인 이해:</p>
+<p><span class="math inline">\(\pi_W = \frac{\beta}{\alpha + \beta}\)</span>: ‘일함(W)’ 상태에 사람이 많아지려면, ‘일하지 않음(NW)’ 상태에서 ‘일함(W)’ 상태로 넘어오는 힘(<span class="math inline">\(\beta\)</span>)이 강해야 합니다. 분모의 <span class="math inline">\((\alpha + \beta)\)</span>는 시스템 전체의 “활동량” 또는 “변화의 총량”이라고 생각할 수 있습니다. 즉, 전체 변화 중에서 <span class="math inline">\(\beta\)</span>만큼의 비율로 ‘일함(W)’ 상태가 채워진다고 볼 수 있습니다.</p>
+<p><span class="math inline">\(\pi_{NW} = \frac{\alpha}{\alpha + \beta}\)</span>: 마찬가지로, ‘일하지 않음(NW)’ 상태에 사람이 많아지려면 ‘일함(W)’ 상태에서 넘어오는 힘(<span class="math inline">\(\alpha\)</span>)이 강해야 합니다.</p>
+<p>이것이 공식에서 <span class="math inline">\(\frac{\beta}{\alpha+\beta}\)</span> 와 <span class="math inline">\(\frac{\alpha}{\alpha+\beta}\)</span> 항이 등장하는 이유입니다. 이 값들은 시간이 무한히 흘렀을 때 각 상태에 도달할 것으로 기대되는 확률의 “목표 지점” 같은 것입니다.</p>
+<p>하지만 처음부터 시스템이 평형 상태에 있는 것은 아닙니다. 예를 들어, 어떤 사람이 현재 ‘일함(W)’ 상태에서 시작했다면(<span class="math inline">\(p_{WW}(0) = 1\)</span>), 시간이 지나면서 점차 평형 상태 확률(<span class="math inline">\(\pi_W = \frac{\beta}{\alpha+\beta}\)</span>)로 가까워집니다.</p>
+<p><span class="math inline">\(e^{-(\alpha+\beta)t}\)</span> 항은 이러한 변화 과정을 설명합니다. <span class="math inline">\(t=0\)</span> (시작 시점): <span class="math inline">\(e^0 = 1\)</span> 입니다. 이 항의 영향력이 가장 큽니다. 시간 <span class="math inline">\(t\)</span>가 커질수록: <span class="math inline">\(e^{-(\alpha+\beta)t}\)</span> 값은 점점 0에 가까워집니다. 즉, 이 항의 영향력이 점점 사라지고, 시스템은 평형 상태 확률에 수렴하게 됩니다.</p>
+<p><span class="math inline">\((\alpha+\beta)\)</span>: 이 값은 변화의 속도를 결정합니다. <span class="math inline">\(\alpha\)</span>와 <span class="math inline">\(\beta\)</span>가 클수록 (즉, 상태 변화가 빠를수록) <span class="math inline">\(e^{-(\alpha+\beta)t}\)</span> 항은 더 빨리 0에 가까워지고, 시스템은 더 빨리 평형 상태에 도달합니다.</p>
+<p><span class="math display">\[p_{NW}(t) = \frac{\beta}{\alpha+\beta} - \frac{\beta}{\alpha+\beta} e^{-(\alpha+\beta)t}\]</span> <span class="math display">\[p_{NNW}(t) = \frac{\alpha}{\alpha+\beta} + \frac{\beta}{\alpha+\beta} e^{-(\alpha+\beta)t}\]</span> 예시 값으로 P(t) 계산 (t = 1년 후): <span class="math display">\[\alpha = 0.1, \beta = 0.05, t = 1\]</span> <span class="math display">\[\alpha + \beta = 0.15\]</span> <span class="math display">\[e^{-(\alpha+\beta)t} = e^{-0.15 \times 1} \approx e^{-0.15} \approx 0.8607\]</span></p>
+<p><span class="math display">\[p_{WW}(1) = \frac{0.05}{0.15} + \frac{0.1}{0.15} \times 0.8607 \approx 0.3333 + 0.6667 \times 0.8607 \approx 0.3333 + 0.5738 \approx 0.9071\]</span> <span class="math display">\[p_{WN}(1) = \frac{0.1}{0.15} - \frac{0.1}{0.15} \times 0.8607 \approx 0.6667 - 0.5738 \approx 0.0929\]</span> <span class="math display">\[p_{NW}(1) = \frac{0.05}{0.15} - \frac{0.05}{0.15} \times 0.8607 \approx 0.3333 - 0.2869 \approx 0.0464\]</span> <span class="math display">\[p_{NNW}(1) = \frac{0.1}{0.15} + \frac{0.05}{0.15} \times 0.8607 \approx 0.6667 + 0.2869 \approx 0.9536\]</span> (참고: 확률의 합이 정확히 1이 되도록 반올림을 조정하면 <span class="math display">\[p_{WW}(1) + p_{WN}(1) = 1\]</span> 이고 <span class="math display">\[p_{NW}(1) + p_{NNW}(1) = 1\]</span> 입니다. 위의 계산은 근사치입니다.) 정확히 계산하면:</p>
+<p><span class="math display">\[P(1) \approx \begin{pmatrix} 0.9071 &amp; 0.0929 \\ 0.0464 &amp; 0.9536 \end{pmatrix}\]</span></p>
+</section>
+<section id="msm을-위한-데이터-준비-및-q-행렬-정의" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="msm을-위한-데이터-준비-및-q-행렬-정의"><span class="header-section-number">7.6.2</span> msm을 위한 데이터 준비 및 Q 행렬 정의</h3>
+<section id="msm-분석용-데이터" class="level4" data-number="7.6.2.1">
+<h4 data-number="7.6.2.1" class="anchored" data-anchor-id="msm-분석용-데이터"><span class="header-section-number">7.6.2.1</span> msm 분석용 데이터</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>panel_data <span class="ot">&lt;-</span> sim_data_processed_manual <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">occupation =</span> <span class="fu">factor</span>(occupation, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"사무직"</span>, <span class="st">"서비스직"</span>, <span class="st">"제조업"</span>)),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">workplace_size =</span> <span class="fu">factor</span>(workplace_size, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"50인 이하"</span>, <span class="st">"50인 이상"</span>))</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="초기-전이-강도-행렬-q_init" class="level4" data-number="7.6.2.2">
+<h4 data-number="7.6.2.2" class="anchored" data-anchor-id="초기-전이-강도-행렬-q_init"><span class="header-section-number">7.6.2.2</span> 초기 전이 강도 행렬 (Q_init)</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Q_init <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">0</span>, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">5</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"HW"</span>, <span class="st">"HNW"</span>, <span class="st">"NHW"</span>, <span class="st">"NHNW"</span>, <span class="st">"Dead"</span>),</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">c</span>(<span class="st">"HW"</span>, <span class="st">"HNW"</span>, <span class="st">"NHW"</span>, <span class="st">"NHNW"</span>, <span class="st">"Dead"</span>)))</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HW"</span>, <span class="st">"HNW"</span>]  <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HW"</span>, <span class="st">"NHW"</span>]  <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HW"</span>, <span class="st">"NHNW"</span>] <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HW"</span>, <span class="st">"Dead"</span>] <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HNW"</span>, <span class="st">"HW"</span>]   <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HNW"</span>, <span class="st">"NHW"</span>]  <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HNW"</span>, <span class="st">"NHNW"</span>] <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"HNW"</span>, <span class="st">"Dead"</span>] <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHW"</span>, <span class="st">"HW"</span>]   <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHW"</span>, <span class="st">"HNW"</span>]  <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHW"</span>, <span class="st">"NHNW"</span>] <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHW"</span>, <span class="st">"Dead"</span>] <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHNW"</span>, <span class="st">"HW"</span>]   <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHNW"</span>, <span class="st">"HNW"</span>]  <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHNW"</span>, <span class="st">"NHW"</span>]  <span class="ot">=</span> <span class="fl">0.001</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>Q_init[<span class="st">"NHNW"</span>, <span class="st">"Dead"</span>] <span class="ot">=</span> <span class="fl">0.01</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"초기 Q 행렬 (Q_init):"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "초기 Q 행렬 (Q_init):"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>Q_init <span class="sc">%&gt;%</span> htmlTable<span class="sc">::</span><span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">HW</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">HNW</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">NHW</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">NHNW</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Dead</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">HW</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HNW</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NHW</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NHNW</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0.001</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; border-bottom: 2px solid grey;">Dead</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+<td style="text-align: center; border-bottom: 2px solid grey;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="기본-msm-모델-적합-보정-변수-없이" class="level3" data-number="7.6.3">
+<h3 data-number="7.6.3" class="anchored" data-anchor-id="기본-msm-모델-적합-보정-변수-없이"><span class="header-section-number">7.6.3</span> 기본 msm 모델 적합 (보정 변수 없이)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>msm_basic_model <span class="ot">&lt;-</span> <span class="fu">msm</span>(state <span class="sc">~</span> age, <span class="at">subject =</span> person_id,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> panel_data,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">qmatrix =</span> Q_init,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">gen.inits =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">method =</span> <span class="st">"Nelder-Mead"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                       <span class="co"># control 인자 조정 시도</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">control =</span> <span class="fu">list</span>(</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">maxit =</span> <span class="dv">10000</span>,    <span class="co"># 최대 반복 횟수 늘리기</span></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">reltol =</span> <span class="fl">1e-6</span>,   <span class="co"># 상대 수렴 허용오차 (기본값은 1e-8 근처)</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>                         <span class="at">trace =</span> <span class="dv">0</span>, <span class="co"># 최적화 과정 출력 (0은 끔, 숫자가 클수록 상세)</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">REPORT =</span> <span class="dv">5</span>       <span class="co"># trace 출력 빈도</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                         </span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>                       )</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>) <span class="co"># method = "Nelder-Mead" # 다른 최적화 방법 시도</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(msm_basic_model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Observed numbers of individuals occupying states at each time
+
+     State 1 State 2 State 3 State 4 State 5 Total
+50      4256       0     744       0       0  5000
+52.8    2801     729     611     556     303  5000
+55.6    2248     677     656     766     653  5000
+58.4    1481     573     612     950    1384  5000
+61.2    1231     528     564     971    1706  5000
+64       808     419     454     913    2406  5000
+66.8     639     367     415     874    2705  5000
+69.6     513     334     355     777    3021  5000
+72.4     337     242     263     613    3545  5000
+75.2     269     198     235     545    3753  5000
+78       195     133     161     395    4116  5000
+
+Expected numbers of individuals occupying states at each time
+
+            HW      HNW      NHW     NHNW      Dead Total
+50   4256.0000   0.0000 744.0000   0.0000    0.0000  5000
+52.8 2767.0818 432.5744 698.8817 448.1947  653.2674  5000
+55.6 1865.3303 558.0031 622.6915 708.9922 1244.9829  5000
+58.4 1301.2127 554.2485 541.3501 832.7592 1770.4294  5000
+61.2  936.7751 502.0011 465.0526 865.1108 2231.0604  5000
+64    693.8180 436.6290 397.1739 841.0038 2631.3753  5000
+66.8  526.8639 372.6990 338.2370 785.0240 2977.1760  5000
+69.6  408.7826 315.4554 287.6575 713.4970 3274.6075  5000
+72.4  322.9817 266.1312 244.4935 636.7491 3529.6445  5000
+75.2  259.0678 224.3591 207.7553 560.9821 3747.8356  5000
+78    210.3783 189.2352 176.5237 489.6700 3934.1928  5000
+
+Observed prevalences of states (percentages of population at risk)
+
+     State 1 State 2 State 3 State 4 State 5
+50     85.12    0.00   14.88    0.00    0.00
+52.8   56.02   14.58   12.22   11.12    6.06
+55.6   44.96   13.54   13.12   15.32   13.06
+58.4   29.62   11.46   12.24   19.00   27.68
+61.2   24.62   10.56   11.28   19.42   34.12
+64     16.16    8.38    9.08   18.26   48.12
+66.8   12.78    7.34    8.30   17.48   54.10
+69.6   10.26    6.68    7.10   15.54   60.42
+72.4    6.74    4.84    5.26   12.26   70.90
+75.2    5.38    3.96    4.70   10.90   75.06
+78      3.90    2.66    3.22    7.90   82.32
+
+Expected prevalences of states (percentages of population at risk)
+
+            HW       HNW       NHW      NHNW     Dead
+50   85.120000  0.000000 14.880000  0.000000  0.00000
+52.8 55.341636  8.651487 13.977634  8.963895 13.06535
+55.6 37.306605 11.160061 12.453831 14.179844 24.89966
+58.4 26.024255 11.084971 10.827001 16.655185 35.40859
+61.2 18.735503 10.040021  9.301052 17.302216 44.62121
+64   13.876359  8.732581  7.943478 16.820076 52.62751
+66.8 10.537278  7.453980  6.764741 15.700481 59.54352
+69.6  8.175652  6.309109  5.753151 14.269939 65.49215
+72.4  6.459634  5.322625  4.889870 12.734981 70.59289
+75.2  5.181357  4.487183  4.155107 11.219642 74.95671
+78    4.207565  3.784704  3.530475  9.793399 78.68386</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Observed numbers of individuals occupying states at each time</p>
+</blockquote>
+<p>나이 50세에는: - State 1 (예: HW - 건강하게 일함)에 4256명 - State 2 (예: HNW - 건강하지만 일 안 함)에 0명 - State 3 (예: NHW - 건강 안 좋지만 일함)에 744명 - State 4 (예: NHNW - 건강 안 좋고 일도 안 함)에 0명 - State 5 (예: Dead - 사망)에 0명 총 5000명이었습니다.</p>
+<p>나이 78세에는 State 5 (사망)에 4116명이 있는 것을 볼 수 있습니다.</p>
+<blockquote class="blockquote">
+<p>Expected numbers of individuals occupying states at each time</p>
+</blockquote>
+<p>(각 시점별 상태를 점유하는 개인의 모델 예측 수)</p>
+<p>msm_basic_model이 학습한 전이 강도(Q-matrix)를 바탕으로, 각 나이대에 몇 명의 사람들이 각 상태에 있을 것이라고 예측한 인원수입니다.</p>
+<p>나이 52.8세에 모델은:</p>
+<ul>
+<li>HW 상태에 약 2767명 (2767.0818)</li>
+<li>HNW 상태에 약 433명 (432.5744)</li>
+<li>Dead 상태에 약 653명 (653.2674)이 있을 것이라고 예측했습니다.</li>
+</ul>
+<p>이 “예측된 수”와 바로 위의 “실제 관찰된 수”를 비교함으로써 모델이 현실을 얼마나 잘 반영하는지 (모델 적합도)를 가늠할 수 있습니다.</p>
+<p>예를 들어, 52.8세의 State 1 (HW) 실제 관찰값은 2801명인데, 모델 예측값은 2767.0818명입니다. 두 값이 얼마나 비슷한지 보는 것입니다.</p>
+</section>
+<section id="보정-변수를-포함한-msm-모델-적합" class="level3" data-number="7.6.4">
+<h3 data-number="7.6.4" class="anchored" data-anchor-id="보정-변수를-포함한-msm-모델-적합"><span class="header-section-number">7.6.4</span> 보정 변수를 포함한 msm 모델 적합<br>
+</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>Q_crude_estimates <span class="ot">&lt;-</span> <span class="fu">crudeinits.msm</span>(state <span class="sc">~</span> age,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">subject =</span> person_id,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">data =</span> panel_data,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">qmatrix =</span> Q_init) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>msm_cov_model <span class="ot">&lt;-</span> <span class="fu">msm</span>(state <span class="sc">~</span> age, <span class="at">subject =</span> person_id,</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">data =</span> panel_data,</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">qmatrix =</span> Q_crude_estimates,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">covariates =</span> <span class="sc">~</span> occupation,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>                      </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">gen.inits =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">method =</span> <span class="st">"Nelder-Mead"</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                       <span class="co"># control 인자 조정 시도</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">control =</span> <span class="fu">list</span>(</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                         <span class="at">maxit =</span> <span class="dv">10000</span>,    <span class="co"># 최대 반복 횟수 늘리기</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                         <span class="at">reltol =</span> <span class="fl">1e-6</span>,   <span class="co"># 상대 수렴 허용오차 (기본값은 1e-8 근처)</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>                         <span class="at">trace =</span> <span class="dv">0</span>,       <span class="co"># 최적화 과정 출력 (0은 끔, 숫자가 클수록 상세)</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>                         <span class="at">REPORT =</span> <span class="dv">5</span>       <span class="co"># trace 출력 빈도</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>                         </span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                       )</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(msm_cov_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Observed numbers of individuals occupying states at each time
+
+     State 1 State 2 State 3 State 4 State 5 Total
+50      4256       0     744       0       0  5000
+52.8    2801     729     611     556     303  5000
+55.6    2248     677     656     766     653  5000
+58.4    1481     573     612     950    1384  5000
+61.2    1231     528     564     971    1706  5000
+64       808     419     454     913    2406  5000
+66.8     639     367     415     874    2705  5000
+69.6     513     334     355     777    3021  5000
+72.4     337     242     263     613    3545  5000
+75.2     269     198     235     545    3753  5000
+78       195     133     161     395    4116  5000
+
+Expected numbers of individuals occupying states at each time
+
+            HW      HNW      NHW     NHNW      Dead Total
+50   4256.0000   0.0000 744.0000   0.0000    0.0000  5000
+52.8 2760.5641 440.1195 706.5822 446.6304  646.1038  5000
+55.6 1863.7153 564.7968 632.5400 708.6238 1230.3241  5000
+58.4 1305.6609 559.0324 551.5202 834.2525 1749.5340  5000
+61.2  945.6017 505.3405 474.9940 868.4652 2205.5986  5000
+64    705.0690 439.2549 406.7262 846.0032 2602.9467  5000
+66.8  539.0381 375.1067 347.3388 791.3778 2947.1386  5000
+69.6  420.9045 317.8960 296.2667 720.8918 3244.0410  5000
+72.4  334.4904 268.6902 252.5741 644.8760 3499.3694  5000
+75.2  269.6841 227.0309 215.2804 569.5548 3718.4499  5000
+78    219.9980 191.9738 183.4787 498.4365 3906.1130  5000
+
+Observed prevalences of states (percentages of population at risk)
+
+     State 1 State 2 State 3 State 4 State 5
+50     85.12    0.00   14.88    0.00    0.00
+52.8   56.02   14.58   12.22   11.12    6.06
+55.6   44.96   13.54   13.12   15.32   13.06
+58.4   29.62   11.46   12.24   19.00   27.68
+61.2   24.62   10.56   11.28   19.42   34.12
+64     16.16    8.38    9.08   18.26   48.12
+66.8   12.78    7.34    8.30   17.48   54.10
+69.6   10.26    6.68    7.10   15.54   60.42
+72.4    6.74    4.84    5.26   12.26   70.90
+75.2    5.38    3.96    4.70   10.90   75.06
+78      3.90    2.66    3.22    7.90   82.32
+
+Expected prevalences of states (percentages of population at risk)
+
+            HW       HNW       NHW      NHNW     Dead
+50   85.120000  0.000000 14.880000  0.000000  0.00000
+52.8 55.211282  8.802390 14.131644  8.932609 12.92208
+55.6 37.274307 11.295936 12.650800 14.172475 24.60648
+58.4 26.113217 11.180649 11.030404 16.685049 34.99068
+61.2 18.912033 10.106810  9.499880 17.369303 44.11197
+64   14.101381  8.785097  8.134525 16.920064 52.05893
+66.8 10.780763  7.502133  6.946777 15.827556 58.94277
+69.6  8.418091  6.357920  5.925334 14.417835 64.88082
+72.4  6.689808  5.373803  5.051481 12.897519 69.98739
+75.2  5.393681  4.540618  4.305607 11.391096 74.36900
+78    4.399959  3.839475  3.669574  9.968731 78.12226
+
+Transition hazard ratios corresponding to covariate effects
+
+occupation서비스직  ( unit of 1 )
+              HR    L    U
+HW - HNW    0.97 0.84 1.12
+HW - NHW    1.04 0.87 1.24
+HW - NHNW   0.88 0.72 1.08
+HW - Dead   0.92 0.81 1.05
+HNW - HW    0.92 0.74 1.14
+HNW - NHW   1.01 0.72 1.41
+HNW - NHNW  0.89 0.70 1.13
+HNW - Dead  1.05 0.83 1.33
+NHW - HW    0.92 0.67 1.25
+NHW - HNW   0.75 0.52 1.08
+NHW - NHNW  1.04 0.89 1.21
+NHW - Dead  1.15 0.91 1.46
+NHNW - HW   0.79 0.24 2.57
+NHNW - HNW  0.99 0.77 1.27
+NHNW - NHW  1.08 0.85 1.37
+NHNW - Dead 0.97 0.84 1.13
+
+Transition hazard ratios corresponding to covariate effects
+
+occupation제조업  ( unit of 1 )
+              HR    L    U
+HW - HNW    1.36 1.18 1.56
+HW - NHW    1.46 1.23 1.72
+HW - NHNW   0.95 0.77 1.18
+HW - Dead   1.11 0.97 1.27
+HNW - HW    0.82 0.66 1.01
+HNW - NHW   0.65 0.45 0.93
+HNW - NHNW  1.00 0.80 1.26
+HNW - Dead  1.07 0.86 1.35
+NHW - HW    0.94 0.69 1.27
+NHW - HNW   0.72 0.51 1.03
+NHW - NHNW  0.99 0.85 1.15
+NHW - Dead  0.93 0.73 1.19
+NHNW - HW   2.36 1.01 5.52
+NHNW - HNW  0.89 0.69 1.15
+NHNW - NHW  1.08 0.85 1.36
+NHNW - Dead 1.01 0.87 1.17</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Jobstress.html" class="pagination-link" aria-label="job stress questionnaires">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">job stress questionnaires</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./Interraction_1.html" class="pagination-link" aria-label="상호작용">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">상호작용</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
