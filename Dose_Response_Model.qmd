@@ -1,4 +1,4 @@
-# 용량반은 관계 기본 실습
+# 용량-반응 관계 기본 실습
 
 ## Exposure (Dose) and Health
 
@@ -297,7 +297,7 @@ df %>%
 threshold를 찾는 방법 중에 threshold point마다, piecewise regression을 반복해서 구하고, 최적의 모델을 찾는 방법을 사용할 수 있습니다. piecewise regression 의 간단한 설명은 다음과 같습니다
 
 | threshold points (piecewise regression) | codes                                          |
-|-----------------------------------------|------------------------------------------------|
+|---------------------------------|---------------------------------------|
 | total                                   | Resp = α + β1 · Dose + β2 ·( Dose -- Ɵ) + + Ɛ0 |
 | If Dose \< Ɵ                            | Resp= α + β1 · Dose + Ɛ0                       |
 | If Dose \> Ɵ                            | Resp= α - β2 ·Ɵ +( β1 + β2 )· Dose + Ɛ0        |
