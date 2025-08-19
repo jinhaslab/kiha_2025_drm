@@ -1,4 +1,4 @@
-# Dose Response Model {#DRM}
+# Dose Response Model I {#DRM}
 
 ## Exposure (Dose) and Health
 
@@ -292,18 +292,12 @@ df %>%
 
 4.  권고 사항: 기존 모델에 의존하기보다는, 연구 특성에 맞는 자체적인 용량-반응 모델을 개발하여 적용하는 것이 바람직합니다.
 
-
 ## Threshold 찾기 (change point 찾기)
-
-
-
 
 threshold를 찾는 방법 중에 threshold point마다, piecewise regression을 반복해서 구하고, 최적의 모델을 찾는 방법을 사용할 수 있습니다. piecewise regression 의 간단한 설명은 다음과 같습니다
 
-
-
 | threshold points (piecewise regression) | codes                                          |
-|-----------------------------------------|------------------------------------------------|
+|---------------------------------|---------------------------------------|
 | total                                   | Resp = α + β1 · Dose + β2 ·( Dose -- Ɵ) + + Ɛ0 |
 | If Dose \< Ɵ                            | Resp= α + β1 · Dose + Ɛ0                       |
 | If Dose \> Ɵ                            | Resp= α - β2 ·Ɵ +( β1 + β2 )· Dose + Ɛ0        |
@@ -435,5 +429,3 @@ cohort %>%
   scale_y_continuous(labels = scaleFUN) +
   geom_line(aes(y = prepwlm), color ='red')
 ```
-
-

@@ -3,20 +3,15 @@ project:
   output-dir: docs
 
 book:
-  title: "직업환경연구방법"
+  title: "2025년 하계 산업보건학회"
   author: "jinha"
-  date: "2025. 3. 20."
+  date: "2025. 8. 15."
   chapters:
     - index.qmd
     - intro.qmd
-    - MetaAnalysis.qmd
     - Dose_Response_Model.qmd
-    - timeseries_1.qmd
-    - InterruptedTS.qmd
-    - Jobstress.qmd
-    - HWLE.qmd
-    - Interraction_1.qmd
-    - summary.qmd
+    - Dose_Response_Model_II.qmd
+    - Dose_Response_Model_III.qmd
     - references.qmd
 
 bibliography: references.bib
