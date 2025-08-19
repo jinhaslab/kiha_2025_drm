@@ -1,4 +1,4 @@
-# Dose Response Model I {#DRM}
+# 용량반은 관계 기본 실습
 
 ## Exposure (Dose) and Health
 
