@@ -285,18 +285,20 @@ window.Quarto = {
 <section id="모델-이론" class="level3" data-number="4.1.1">
 <h3 data-number="4.1.1" class="anchored" data-anchor-id="모델-이론"><span class="header-section-number">4.1.1</span> <strong>모델 이론</strong></h3>
 <ul>
-<li><p><strong>로지스틱 모델</strong>: y(dose)=fraca1+exp(−b(dose−c))</p>
+<li><p><strong>로지스틱 모델</strong>: <span class="math display">\[y = \frac{a}{1 + \exp(-b(\text{dose} - c))}\]</span></p>
 <ul>
-<li><p>S자형 곡선을 설명하는 가장 기본적인 모델입니다. 특히, 질병 발생 여부와 같은 이항형 결과를 다룰 때 많이 사용됩니다</p></li>
+<li><p>S자형 곡선을 설명하는 가장 기본적인 모델입니다. 특히, 질병 발생 여부와 같은 이항형 결과를 다룰 때 많이 사용됩니다.</p></li>
 <li><p>a: 최대 반응값</p></li>
 <li><p>b: 곡선의 기울기(성장률)</p></li>
 <li><p>c: LD50(반응이 50%가 되는 용량)</p></li>
 </ul></li>
-<li><p><strong>힐 모델</strong>: <span class="math display">\[y = \text{Bottom} + \frac{(\text{Top} - \text{Bottom}) \cdot \text{dose}^n}{\text{EC}_{50}^n + \text{dose}^n}\]</span></p>
+<li><p><strong>힐 모델</strong>: <span class="math display">\[y = \frac{a \cdot \text{dose}^b}{c^b + \text{dose}^b}\]</span></p>
 <ul>
-<li>$ n $: 힐 계수 (설명의 b, 곡선 기울기/민감도).</li>
-<li>$ _{50} $: 반응이 50%가 되는 용량 (설명의 c, LD50).</li>
-<li>$ , $: 최소/최대 반응값 (설명에서 암묵적으로 포함).</li>
+<li><p>로지스틱 모델과 비슷하지만, 곡선의 기울기를 조절하는 파라미터가 추가되어, 용량-반응 관계의 민감도를 더 세밀하게 표현할 수 있습니다.</p></li>
+<li><p>a: 최대 반응값<br>
+</p></li>
+<li><p>b: 힐 계수(Hill Coefficient), 곡선 기울기(민감도)</p></li>
+<li><p>c: LD50(반응이 50%가 되는 용량)</p></li>
 </ul></li>
 </ul>
 </section>
