@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.27)  19 AUG 2025 16:58
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.9.27)  19 AUG 2025 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1974,46 +1974,73 @@ Package longtable Warning: Column widths have changed
 
 [50]
 chapter 8.
-Missing character: There is no ☑ (U+2611) in font NanumGothic/OT:language=dflt;mapping=tex-text;!
-LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
-(Font)              scaled to size 14.23502pt on input line 2190.
+File: img/rstudio1.png Graphic file (type bmp)
+<img/rstudio1.png>
 [51
 
-] [52] [53]
-chapter 9.
-[54
-
 ]
-Underfull \hbox (badness 1655) in paragraph at lines 2370--2372
+File: img/rstudio2.png Graphic file (type bmp)
+<img/rstudio2.png>
+
+Overfull \hbox (179.20207pt too wide) in paragraph at lines 2166--2169
+[]\TU/NanumGothic(0)/m/n/10.95 R기본 설정 기본 구성 설정하기 > Tools -> Global Options [] 
+ []
+
+Missing character: There is no ☑ (U+2611) in font NanumGothic/OT:language=dflt;mapping=tex-text;!
+File: img/rstudio3.png Graphic file (type bmp)
+<img/rstudio3.png>
+
+Overfull \hbox (10.95529pt too wide) in paragraph at lines 2171--2174
+[] 
+ []
+
+[52]
+File: img/rstudio4.png Graphic file (type bmp)
+<img/rstudio4.png>
+[53]
+LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/n' will be
+(Font)              scaled to size 14.23502pt on input line 2211.
+File: img/rstudio5.png Graphic file (type bmp)
+<img/rstudio5.png>
+[54] [55] [56]
+chapter 9.
+
+Package longtable Warning: Column widths have changed
+(longtable)                in table 9.1 on input line 2361.
+
+[57
+
+] [58]
+Underfull \hbox (badness 1655) in paragraph at lines 2441--2443
 []\TU/NanumGothic(0)/m/n/10.95 ‘&’는 ’AND’, ‘|’는 ’OR’의 의미이며, 한 번에 여러 조건을 적용할 수 있습니다.’!’는 부정을
  []
 
-[55]
-Underfull \hbox (badness 1014) in paragraph at lines 2412--2415
+
+Underfull \hbox (badness 1014) in paragraph at lines 2483--2486
 []\TU/NanumGothic(0)/m/n/10.95 ’is.na’는 데이터 내 변수들 중 NA누락값을 식별 가능합니다. Filter를 통해 변수 ’waist’의
  []
 
-[56] [57] [58] [59]
+[59] [60] [61] [62] [63]
 chapter 10.
-[60
+[64
 
-] [61]
-Overfull \hbox (73.61917pt too wide) in paragraph at lines 2756--2756
+] [65]
+Overfull \hbox (73.61917pt too wide) in paragraph at lines 2815--2815
 []\TU/NanumGothicCoding(0)/m/it/10.95 alternative hypothesis: true difference in means between group 남성 and group 여성 is not equal to 0[] 
  []
 
-[62]
+[66]
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 10.1 on input line 2803.
+(longtable)                in table 10.1 on input line 2862.
 
-[63] [64]
+[67] [68]
 
 LaTeX Font Warning: Font shape `TU/NanumGothic(0)/m/it' undefined
-(Font)              using `TU/NanumGothic(0)/m/n' instead on input line 2907.
+(Font)              using `TU/NanumGothic(0)/m/n' instead on input line 2966.
 
 LaTeX Font Info:    Font shape `TU/NanumGothic(0)/m/it' will be
-(Font)              scaled to size 10.95pt on input line 2907.
+(Font)              scaled to size 10.95pt on input line 2966.
 Package microtype Info: Character `\quotesinglbase ' is missing
 (microtype)             in font `\TU/NanumGothic(0)/m/it/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -2022,29 +2049,37 @@ Package microtype Info: Character `\quotedblbase ' is missing
 (microtype)             Ignoring protrusion settings for this character.
 
 Package longtable Warning: Column widths have changed
-(longtable)                in table 10.2 on input line 2929.
+(longtable)                in table 10.2 on input line 2988.
 
-[65] [66]
+[69] [70]
 chapter 11.
 File: R-Basic_files/figure-pdf/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use R-Basic_files/figure-pdf/unnamed-chunk-22-1.pdf>
-[67
+[71
 
-] [68]
+]
+Overfull \hbox (819.37389pt too wide) in paragraph at lines 3072--3072
+[]\TU/NanumGothicCoding(0)/m/it/10.95 -   ggplot(aes(x = age_group, y = prob, color = age_group, group = sex)): ggplot 객체를 생성하고, x축에는 연령 그룹을, y축에는 고혈압 발생 확률을 매핑합니다. 선 색상은 연령 그룹으로 구분하고, group = sex로 각 성별별로 다른 그룹으로 구분합니다.[] 
+ []
+
+
+Overfull \hbox (231.19879pt too wide) in paragraph at lines 3072--3072
+[]\TU/NanumGothicCoding(0)/m/it/10.95 -   theme(legend.position = "none") : 범례의 위치를 삭제함으로써, 범례를 지웁니다. 범례를 나타낼 경우의 그래프는 아래와 같습니다.[] 
+ []
+
+[72]
 File: R-Basic_files/figure-pdf/unnamed-chunk-23-1.pdf Graphic file (type pdf)
 <use R-Basic_files/figure-pdf/unnamed-chunk-23-1.pdf>
-[69]
 File: R-Basic_files/figure-pdf/unnamed-chunk-24-1.pdf Graphic file (type pdf)
 <use R-Basic_files/figure-pdf/unnamed-chunk-24-1.pdf>
-
-Underfull \hbox (badness 1609) in paragraph at lines 3084--3086
+[73]
+Underfull \hbox (badness 1609) in paragraph at lines 3135--3137
 []\TU/NanumGothic(0)/m/it/10.95 추세선 그래프 동일한 현상을 추세선 그래프를 바탕으로 추세선 및 산점도 그래프를
  []
 
-[70]
 File: R-Basic_files/figure-pdf/unnamed-chunk-25-1.pdf Graphic file (type pdf)
 <use R-Basic_files/figure-pdf/unnamed-chunk-25-1.pdf>
-[71]
+[74] [75]
 
 ! LaTeX Error: Something's wrong--perhaps a missing \item.
 
@@ -2052,15 +2087,15 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.3124 \end{CSLReferences}
+l.3172 \end{CSLReferences}
                            
 Here is how much of TeX's memory you used:
- 25664 strings out of 477570
- 497708 string characters out of 5817830
+ 25719 strings out of 477570
+ 498810 string characters out of 5817830
  1930422 words of memory out of 5000000
- 46481 multiletter control sequences out of 15000+600000
+ 46529 multiletter control sequences out of 15000+600000
  564774 words of font info for 108 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,9n,122p,10900b,534s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on index.pdf (71 pages).
+Output written on index.pdf (75 pages).
