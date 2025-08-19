@@ -102,7 +102,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&amp;display=swap" rel="stylesheet">
 
+<style>
+  body {
+    font-family: 'Nanum Gothic','Nanum Myeongjo', 'Times New Roman', serif;
+    /* HTML 문서의 줄 간격을 2배로 설정합니다. */
+    line-height: 2.0;
+  }
+  /* 코드 블록에는 여러 Monospace 폰트를 순서대로 적용합니다. */
+  pre, code {
+    font-family:  Consolas, 'Source Code Pro', 'JetBrains Mono', 'Fira Code', 'Cascadia Code',monospace !important;
+  }
+</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -155,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./Dose_Response_Model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">용량반은 관계 기본 실습</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">용량-반응 관계 기본 실습</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -247,11 +292,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>b: 곡선의 기울기(성장률)</p></li>
 <li><p>c: LD50(반응이 50%가 되는 용량)</p></li>
 </ul></li>
-<li><p><strong>힐 모델</strong>: y(dose)=fracacdotdosebcb+doseb</p>
+<li><p><strong>힐 모델</strong>: <span class="math display">\[y = \text{Bottom} + \frac{(\text{Top} - \text{Bottom}) \cdot \text{dose}^n}{\text{EC}_{50}^n + \text{dose}^n}\]</span></p>
 <ul>
-<li><p>로지스틱 모델과 비슷하지만, 곡선의 기울기를 조절하는 파라미터가 추가되어, 용량-반응 관계의 민감도를 더 세밀하게 표현할 수 있습니다.</p></li>
-<li><p>b: 힐 계수(Hill Coefficient), 곡선 기울기(민감도)</p></li>
-<li><p>c: LD50(반응이 50%가 되는 용량)</p></li>
+<li>$ n $: 힐 계수 (설명의 b, 곡선 기울기/민감도).</li>
+<li>$ _{50} $: 반응이 50%가 되는 용량 (설명의 c, LD50).</li>
+<li>$ , $: 최소/최대 반응값 (설명에서 암묵적으로 포함).</li>
 </ul></li>
 </ul>
 </section>
@@ -561,11 +606,11 @@ Number of Groups: 2 </code></pre>
 <p>혼합 효과 모델은 단순히 두 곡선을 그리는 것을 넘어, 두 그룹이 통계적으로 어떻게 다른지를 알려줍니다. <code>summary(nlme_fit)</code> 결과를 자세히 해석해 보겠습니다.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 6%">
-<col style="width: 8%">
-<col style="width: 5%">
-<col style="width: 3%">
-<col style="width: 76%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 56%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -580,7 +625,7 @@ Number of Groups: 2 </code></pre>
 <td><code>a.(Intercept)</code></td>
 <td>1.195727</td>
 <td>0.0000</td>
-<td>**비교대 근무자의 최대 반응값(a)**입니다.</td>
+<td><strong>비교대 근무자의 최대 반응값(a)</strong>입니다.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -594,7 +639,7 @@ Number of Groups: 2 </code></pre>
 <td><code>mu.(Intercept)</code></td>
 <td>0.835771</td>
 <td>0.0000</td>
-<td>**교대 근무자의 기울기(mu)**입니다.</td>
+<td><strong>교대 근무자의 기울기(mu)</strong>입니다.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -608,7 +653,7 @@ Number of Groups: 2 </code></pre>
 <td><code>lam.(Intercept)</code></td>
 <td>5.000389</td>
 <td>0.0000</td>
-<td>**교대 근무자의 시작점(lam)**입니다.</td>
+<td><strong>교대 근무자의 시작점(lam)</strong>입니다.</td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -619,7 +664,7 @@ Number of Groups: 2 </code></pre>
 </tr>
 </tbody>
 </table>
-<p>이 결과를 통해 우리는 **‘과로에 대한 질병 반응의 기울기(mu)는 교대 근무자와 비교대 근무자 간에 통계적으로 유의미하게 다르다’**는 결론을 내릴 수 있습니다. 이는</p>
+<p>이 결과를 통해 우리는 <strong>‘과로에 대한 질병 반응의 기울기(mu)는 교대 근무자와 비교대 근무자 간에 통계적으로 유의미하게 다르다’</strong>는 결론을 내릴 수 있습니다. 이는</p>
 <p><strong>교대 근무 여부</strong>라는 공변량이 용량-반응 관계에 중요한 영향을 미친다는 강력한 증거가 됩니다.</p>
 
 

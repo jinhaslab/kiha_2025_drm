@@ -20,14 +20,46 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-  pdf:
-     documentclass: scrreprt
-     include-in-header:
+    # 구글 폰트에서 나눔 명조를 불러옵니다.
+    # 영문 폰트는 Times New Roman으로 설정합니다.
+    # 이렇게 설정하면 시스템에 폰트가 설치되어 있지 않아도 폰트가 적용됩니다.
+    include-in-header:
       - text: |
-          \usepackage{fontspec}
-          \setmainfont{NanumGothic}
-          \setsansfont{NanumBarunGothic}
-          \setmonofont{NanumGothicCoding}
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+          
+          <style>
+            body {
+              font-family: 'Nanum Gothic','Nanum Myeongjo', 'Times New Roman', serif;
+              /* HTML 문서의 줄 간격을 2배로 설정합니다. */
+              line-height: 2.0;
+            }
+            /* 코드 블록에는 여러 Monospace 폰트를 순서대로 적용합니다. */
+            pre, code {
+              font-family:  Consolas, 'Source Code Pro', 'JetBrains Mono', 'Fira Code', 'Cascadia Code',monospace !important;
+            }
+          </style>
+  pdf:
+    documentclass: scrreprt
+    # 이 부분을 추가하여 줄 간격을 2.0으로 설정합니다.
+    linestretch: 2.0
+    # 영문 폰트를 Times New Roman으로 설정합니다.
+    mainfont: "Times New Roman"
+    # 한글 폰트를 구글 폰트에서 가져와서 적용합니다.
+    # 나눔 명조 폰트가 시스템에 설치되어 있지 않아도 작동합니다.
+    fontfamilyoptions:
+      - T1
+      - upgreek
+    font: "Nanum Myeongjo"
+    # 구글 폰트 URL을 포함하도록 이 부분을 수정했습니다.
+    include-in-header:
+      - text: |
+          \usepackage{setspace}
+          \doublespacing
+          \usepackage{xeCJK}
+          \setCJKmainfont{NanumMyeongjo}
 
 editor: visual
 
