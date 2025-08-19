@@ -12,6 +12,7 @@ book:
     - Dose_Response_Model.qmd
     - Dose_Response_Model_II.qmd
     - Dose_Response_Model_III.qmd
+    - R Basic.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -20,7 +21,13 @@ format:
   html:
     theme: cosmo
   pdf:
-    documentclass: scrreprt
+     documentclass: scrreprt
+     include-in-header:
+      - text: |
+          \usepackage{fontspec}
+          \setmainfont{NanumGothic}
+          \setsansfont{NanumBarunGothic}
+          \setmonofont{NanumGothicCoding}
 
 editor: visual
 

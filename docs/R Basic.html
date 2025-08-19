@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; R 기본 소개 – 2025년 하계 산업보건학회</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./references.html" rel="next">
+<link href="./Dose_Response_Model_III.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-a8378a0342da607bf6aa9ac04725c156.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-424117795b1f6bc5b90be9cdae97709d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R Basic.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R 기본 소개</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">2025년 하계 산업보건학회</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">소개</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">개요</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dose_Response_Model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">용량반은 관계 기본 실습</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dose_Response_Model_II.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title"><strong>용량-반응 모델링 및 실습: Gompertz 모델</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Dose_Response_Model_III.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">비선형 모델 비교과 MixedModel</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R Basic.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R 기본 소개</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#r-소개" id="toc-r-소개" class="nav-link active" data-scroll-target="#r-소개"><span class="header-section-number">5.1</span> R 소개</a></li>
+  <li><a href="#r사용-방법" id="toc-r사용-방법" class="nav-link" data-scroll-target="#r사용-방법"><span class="header-section-number">5.2</span> R사용 방법</a></li>
+  <li><a href="#데이터-소개-및-준비" id="toc-데이터-소개-및-준비" class="nav-link" data-scroll-target="#데이터-소개-및-준비"><span class="header-section-number">6</span> 데이터 소개 및 준비</a>
+  <ul class="collapse">
+  <li><a href="#건강검진-데이터셋의-소개-및-구조에-대해-이해합니다." id="toc-건강검진-데이터셋의-소개-및-구조에-대해-이해합니다." class="nav-link" data-scroll-target="#건강검진-데이터셋의-소개-및-구조에-대해-이해합니다."><span class="header-section-number">6.1</span> 건강검진 데이터셋의 소개 및 구조에 대해 이해합니다.</a></li>
+  <li><a href="#r을-사용하여-데이터를-불러오고-기본적인-탐색을-진행합니다." id="toc-r을-사용하여-데이터를-불러오고-기본적인-탐색을-진행합니다." class="nav-link" data-scroll-target="#r을-사용하여-데이터를-불러오고-기본적인-탐색을-진행합니다."><span class="header-section-number">6.2</span> R을 사용하여 데이터를 불러오고 기본적인 탐색을 진행합니다.</a>
+  <ul class="collapse">
+  <li><a href="#select" id="toc-select" class="nav-link" data-scroll-target="#select"><span class="header-section-number">6.2.1</span> select</a></li>
+  <li><a href="#filter" id="toc-filter" class="nav-link" data-scroll-target="#filter"><span class="header-section-number">6.2.2</span> filter</a></li>
+  <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate"><span class="header-section-number">6.2.3</span> mutate</a></li>
+  <li><a href="#pivot-longer" id="toc-pivot-longer" class="nav-link" data-scroll-target="#pivot-longer"><span class="header-section-number">6.2.4</span> pivot longer</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#기초-데이터-분석" id="toc-기초-데이터-분석" class="nav-link" data-scroll-target="#기초-데이터-분석"><span class="header-section-number">7</span> 기초 데이터 분석</a>
+  <ul class="collapse">
+  <li><a href="#기초-통계-분석을-통해-데이터의-주요-특징을-파악합니다." id="toc-기초-통계-분석을-통해-데이터의-주요-특징을-파악합니다." class="nav-link" data-scroll-target="#기초-통계-분석을-통해-데이터의-주요-특징을-파악합니다."><span class="header-section-number">7.1</span> 기초 통계 분석을 통해 데이터의 주요 특징을 파악합니다.</a>
+  <ul class="collapse">
+  <li><a href="#count" id="toc-count" class="nav-link" data-scroll-target="#count"><span class="header-section-number">7.1.1</span> count</a></li>
+  <li><a href="#summarise" id="toc-summarise" class="nav-link" data-scroll-target="#summarise"><span class="header-section-number">7.1.2</span> summarise</a></li>
+  <li><a href="#group_by" id="toc-group_by" class="nav-link" data-scroll-target="#group_by"><span class="header-section-number">7.1.3</span> group_by</a></li>
+  <li><a href="#chi-square검정" id="toc-chi-square검정" class="nav-link" data-scroll-target="#chi-square검정"><span class="header-section-number">7.1.4</span> chi square검정</a></li>
+  <li><a href="#t-test" id="toc-t-test" class="nav-link" data-scroll-target="#t-test"><span class="header-section-number">7.1.5</span> t test</a></li>
+  </ul></li>
+  <li><a href="#변수-간의-관계와-패턴을-탐색합니다." id="toc-변수-간의-관계와-패턴을-탐색합니다." class="nav-link" data-scroll-target="#변수-간의-관계와-패턴을-탐색합니다."><span class="header-section-number">7.2</span> 변수 간의 관계와 패턴을 탐색합니다.</a>
+  <ul class="collapse">
+  <li><a href="#table-2" id="toc-table-2" class="nav-link" data-scroll-target="#table-2"><span class="header-section-number">7.2.1</span> TABLE 2</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#데이터-시각화" id="toc-데이터-시각화" class="nav-link" data-scroll-target="#데이터-시각화"><span class="header-section-number">8</span> 데이터 시각화</a>
+  <ul class="collapse">
+  <li><a href="#기본적인-시각화-기술-예를-들어-막대-그래프-선-그래프-등을-배웁니다." id="toc-기본적인-시각화-기술-예를-들어-막대-그래프-선-그래프-등을-배웁니다." class="nav-link" data-scroll-target="#기본적인-시각화-기술-예를-들어-막대-그래프-선-그래프-등을-배웁니다."><span class="header-section-number">8.1</span> 기본적인 시각화 기술, 예를 들어 막대 그래프, 선 그래프 등을 배웁니다.</a>
+  <ul class="collapse">
+  <li><a href="#ggplot-종류" id="toc-ggplot-종류" class="nav-link" data-scroll-target="#ggplot-종류"><span class="header-section-number">8.1.1</span> ggplot 종류</a></li>
+  <li><a href="#실제-그려보기" id="toc-실제-그려보기" class="nav-link" data-scroll-target="#실제-그려보기"><span class="header-section-number">8.1.2</span> 실제 그려보기</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">R 기본 소개</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="r-소개" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="r-소개"><span class="header-section-number">5.1</span> R 소개</h2>
+<p>데이터 분석 및 통계 연구에 사용되는 강력한 프로그래밍 언어 및 소프트웨어 환경입니다. 데이터 처리, 분석, 시각화, 보고서 작성 등 다양한 작업을 수행할 수 있으며, 활발한 커뮤니티와 다양한 패키지를 통해 사용자의 요구에 맞는 기능을 확장할 수 있습니다.</p>
+</section>
+<section id="r사용-방법" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="r사용-방법"><span class="header-section-number">5.2</span> R사용 방법</h2>
+<ul>
+<li><p>R server 사용 RStudio Cloud 무료 버전의 용량 제한으로 인하여, 원활한 실습을 위해 R server 제공</p></li>
+<li><p>https://sehnr.org/rtutor</p></li>
+<li><p>안내된 계정 사용</p></li>
+<li><p>.Rproj : R프로젝트 파일로, 일관된 작업을 보장하고, 사용자별 설정을 저장할 수 있습니다. 현재는 우선 생성되어 있는 상태입니다.</p></li>
+<li><p>새로운 R script 생성</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio1.png" class="img-fluid figure-img"></p>
+<figcaption>rstudio1</figcaption>
+</figure>
+</div>
+<ul>
+<li>R기본 설정 기본 구성 설정하기 &gt; Tools -&gt; Global Options <img src="img/rstudio2.png" class="img-fluid" alt="rstudio2"></li>
+</ul>
+<p>결과 도출을 잘하려면, 다음과 같은 설정을 선택해주어야 합니다. Code -&gt; Display -&gt; ☑ <img src="img/rstudio3.png" class="img-fluid" alt="rstudio3"></p>
+<ul>
+<li>R 사용 전 설정 및 R 프로그램 이해 다음과 같은 이름의 폴더를 생성합니다. 폴더는 ’New Folder’에서, R script는 ’New Blank File’을 클릭하여 새로 생성합니다.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio4.png" class="img-fluid figure-img"></p>
+<figcaption>rstudio4</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>폴더 별 사용 용도 data: 모든 원 또는 가공된 데이터 파일을 여기에 보관해야 합니다. rscript: 모든 r 스크립트가 저장되어 있어야 합니다.</p>
+<ul>
+<li>datastep.R: 데이터 정리, 변환 및 전처리를 합니다.</li>
+<li>analysis.R: 핵심 분석 방법(통계 테스트, 데이터 모델링 등)을 포함합니다.</li>
+<li>sources: 추가 스크립트 하위 폴더입니다.
+<ul>
+<li>function.R: 서로 다른 스크립트에서 사용할 사용자 정의 함수를 정의해놓을 수 있습니다. results: plot, 테이블, 및 처리된 파일과 같은 모든 결과물을 여기에 저장합니다. manuscript: 프로젝트에 대해 작성 중인 보고서나 논문 초안, 메모 및 최종 버전을 저장합니다.</li>
+</ul></li>
+</ul></li>
+<li><p>Data 준비</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/rstudio5.png" class="img-fluid figure-img"></p>
+<figcaption>rstudio5</figcaption>
+</figure>
+</div>
+<p>저장하는 위치(Cloud &gt; project &gt; data)를 제대로 파악하고 업로드해야 파일 찾을 때 편리합니다. 현재 파일 링크를 통해서 데이터를 불러올 것이기에 따로 업로드하지 않아도 됩니다.</p>
+<ul>
+<li>시각화를 위한 R 패키지 다운로드 및 불러오기 R에서 코드를 실행할 때는 반드시 ctrl + enter를 눌러야 합니다.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"tidyverse"</span>)) <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>require: 이 함수는 ‘tidyverse’ 패키지가 이미 설치되어 있고 R 세션에서 사용할 수 있는지 확인합니다.</p></li>
+<li><p>!: 이 기호는 논리적 NOT을 나타냅니다. 이 함수는 require()의 결과를 반전시킵니다. 따라서 ’tidyverse’가 설치되지 않은 경우(즉, require()가 FALSE를 반환하는 경우) !.require()는 TRUE가 됩니다.</p></li>
+<li><p>if(): 조건문으로, if 블록 안의 코드는 조건이 TRUE인 경우에만 실행됩니다. 이 경우 ’tidyverse’가 설치되지 않았다면 조건은 TRUE가 됩니다.</p></li>
+<li><p>install.packages(“tidyverse”): 이 명령어는 ‘tidyverse’ 패키지를 설치합니다. ‘tidyverse’ 패키지가 아직 설치되지 않은 경우에만 실행됩니다.</p></li>
+<li><p>R 패키지 설치</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#basic requirement</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"tidyverse"</span>)) <span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"htmlTable"</span>)) <span class="fu">install.packages</span>(<span class="st">"htmlTable"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"broom"</span>)) <span class="fu">install.packages</span>(<span class="st">"broom"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"labelled"</span>)) <span class="fu">install.packages</span>(<span class="st">"labelled"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#packages from github</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"devtools"</span>)) <span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"ggplot2"</span>)) <span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"tabf"</span>)) <span class="fu">install.packages</span>(<span class="st">"jinhaslab/tabf"</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tabf)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(<span class="st">"readxl"</span>)) <span class="fu">install.packages</span>(<span class="st">"readxl"</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"readxl"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>tidyverse: 데이터 시각화를 위한 ggplot2가 유명하며, 데이터 조작에 도움이 되는 dplyr과 tidyr도 있습니다.</li>
+<li>htmlTable: HTML 형식의 고급 테이블을 만들 수 있습니다. 웹 플랫폼에서 데이터를 표형식으로 표시해야 할 때 특히 유용합니다.</li>
+<li>broom: lm과 같은 R의 내장 함수의 지저분한 출력을 깔끔한 데이터 프레임으로 변환합니다. 통계 테스트나 모델의 결과를 시각화하고 싶을 때 유용합니다.</li>
+<li>ggplot2: 데이터 시각화를 위한 가장 유명한 R 패키지 중 하나입니다. 그래픽 문법을 기반으로 하며 복잡하고 사용자 지정 가능한 플롯을 만들기 위한 강력한 플랫폼을 제공합니다.</li>
+<li>tabf: GitHub에서 제공되는 패키지로, 테이블 서식 지정과 관련된 기능을 제공합니다.</li>
+<li>readxl: R에 엑셀파일을 불러올 때 사용하는 패키지입니다.</li>
+</ul>
+</section>
+<section id="데이터-소개-및-준비" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> 데이터 소개 및 준비</h1>
+<section id="건강검진-데이터셋의-소개-및-구조에-대해-이해합니다." class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="건강검진-데이터셋의-소개-및-구조에-대해-이해합니다."><span class="header-section-number">6.1</span> 건강검진 데이터셋의 소개 및 구조에 대해 이해합니다.</h2>
+<ul>
+<li>범주형 변수 : 카테고리나 그룹으로 분류할 수 있는 변수입니다. 이 변수들은 수적인 의미를 가지지 않으며 단순히 분류하기 위한 목적으로 사용됩니다.</li>
+<li>연속형 변수 : 연속적인 숫자로 표현되며, 사이에 무한히 많은 값이 존재할 수 있는 변수입니다. 이 변수들은 산수를 통해 양과 크기를 측정할 수 있습니다.</li>
+</ul>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td><strong>변수명 (code)</strong></td>
+<td><strong>변수내용(source)</strong></td>
+<td><strong>변수 값</strong></td>
+</tr>
+<tr class="even">
+<td>idv_id</td>
+<td>가입자 일련번호</td>
+<td>숫자</td>
+</tr>
+<tr class="odd">
+<td>AGE</td>
+<td>연령</td>
+<td>세, 숫자</td>
+</tr>
+<tr class="even">
+<td>sido</td>
+<td>시도단위</td>
+<td>시도, 숫자</td>
+</tr>
+<tr class="odd">
+<td>sex</td>
+<td>성별</td>
+<td>문자</td>
+</tr>
+<tr class="even">
+<td>height</td>
+<td>신장 5cm 단위</td>
+<td>cm, 숫자</td>
+</tr>
+<tr class="odd">
+<td>weight</td>
+<td>체중 5kg 단위</td>
+<td>kg, 숫자</td>
+</tr>
+<tr class="even">
+<td>waist</td>
+<td>허리둘레</td>
+<td>cm, 숫자&nbsp;</td>
+</tr>
+<tr class="odd">
+<td>bp_high</td>
+<td>수축기 혈압</td>
+<td>mmHg, 숫자</td>
+</tr>
+<tr class="even">
+<td>bp_lwst</td>
+<td>이완기 혈압</td>
+<td>mmHg, 숫자</td>
+</tr>
+<tr class="odd">
+<td>tot_chole</td>
+<td>총콜레스테롤</td>
+<td>mg/dL, 숫자</td>
+</tr>
+<tr class="even">
+<td>triglyceride</td>
+<td>트리글리세라이드</td>
+<td>mg/dL, 숫자</td>
+</tr>
+<tr class="odd">
+<td>hdl_chole</td>
+<td>콜레스테롤(HDL)</td>
+<td>mg/dL, 숫자</td>
+</tr>
+<tr class="even">
+<td>ldl_chole</td>
+<td>콜레스테롤(LDL)</td>
+<td>mg/dL, 숫자</td>
+</tr>
+<tr class="odd">
+<td>sgot_ast</td>
+<td>간기능검사(AST)</td>
+<td>U/L, 숫자</td>
+</tr>
+<tr class="even">
+<td>sgpt_alt</td>
+<td>간기능검사(ALT)</td>
+<td>U/L, 숫자</td>
+</tr>
+<tr class="odd">
+<td>gamma_gtp</td>
+<td>감마지티피</td>
+<td>IU/L, 숫자</td>
+</tr>
+<tr class="even">
+<td>smk_stat_type_cd</td>
+<td>흡연상태</td>
+<td>문자</td>
+</tr>
+<tr class="odd">
+<td>drk_yn</td>
+<td>음주여부</td>
+<td>문자</td>
+</tr>
+<tr class="even">
+<td>hchk_oe_inspec_yn</td>
+<td>구강검진수검여부</td>
+<td>문자</td>
+</tr>
+<tr class="odd">
+<td>crs_yn</td>
+<td>치아우식증유무</td>
+<td>문자</td>
+</tr>
+<tr class="even">
+<td>tth_mms_yn</td>
+<td>결손치유무</td>
+<td>문자</td>
+</tr>
+<tr class="odd">
+<td>odt_trb_yn</td>
+<td>치아마모증유무</td>
+<td>문자</td>
+</tr>
+<tr class="even">
+<td>htn</td>
+<td>고혈압여부</td>
+<td>문자</td>
+</tr>
+<tr class="odd">
+<td>dep</td>
+<td>부서</td>
+<td>문자</td>
+</tr>
+<tr class="even">
+<td>job</td>
+<td>직종</td>
+<td>숫자</td>
+</tr>
+<tr class="odd">
+<td>BMI</td>
+<td>비만도</td>
+<td>숫자</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="r을-사용하여-데이터를-불러오고-기본적인-탐색을-진행합니다." class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="r을-사용하여-데이터를-불러오고-기본적인-탐색을-진행합니다."><span class="header-section-number">6.2</span> R을 사용하여 데이터를 불러오고 기본적인 탐색을 진행합니다.</h2>
+<ul>
+<li>데이터 불러오기 R에 저장해둔 데이터를 현재 분석을 진행하기 위해 데이터를 준비합니다.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/healthcheck.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>readRDS(): 이 함수는 R에서 .rds 파일을 읽는 데 사용됩니다. .rds 파일은 R에서 데이터를 저장하는 특별한 파일 형식입니다.</li>
+<li>data1 = : 불러온 데이터를 data1이라는 이름의 변수에 저장하는 부분입니다. 이렇게 저장하면 나중에 data1을 사용해서 데이터를 분석하거나 그래프를 그릴 수 있습니다.</li>
+</ul>
+<section id="select" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="select"><span class="header-section-number">6.2.1</span> select</h3>
+<p>데이터가 어떻게 구성되었는지 확인하는 과정이 제일 먼저 필요합니다. 우리는 select을 통해서 데이터 내에서 원하는 변수명만 확인해서 볼 수도 있습니다.</p>
+<p>처음 다섯 개의 변수를 선택해 보겠습니다. head()는 위에 6행만 보여주는 것입니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="st">"idv_id"</span>, <span class="st">"AGE"</span>, <span class="st">"sex"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   idv_id AGE sex
+1 3823099  31   1
+2  761158  37   1
+3 3915038  33   1
+4 3108477  30   1
+5 4621083  36   1
+6 3108819  38   1</code></pre>
+</div>
+</div>
+</section>
+<section id="filter" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="filter"><span class="header-section-number">6.2.2</span> filter</h3>
+<p>특정한 조건을 준 데이터형태를 알고 싶다면, ’filter’를 통해 특정 기준을 충족하는 행을 선택합니다. 예를 들어 성별 또는 특정 연령대에 따라 개인을 선택할 수 있습니다. 이를 위해 여러 조건문이 사용됩니다.</p>
+<p>’==’는 같음을 의미합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sex, AGE) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sex AGE
+1   1  31
+2   1  37
+3   1  33
+4   1  30
+5   1  36
+6   1  38</code></pre>
+</div>
+</div>
+<p>‘&amp;’는 ’AND’, ‘|’는 ’OR’의 의미이며, 한 번에 여러 조건을 적용할 수 있습니다.’!’는 부정을 의미합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sex, AGE) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">!=</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(AGE <span class="sc">&gt;</span><span class="dv">19</span> <span class="sc">&amp;</span> AGE <span class="sc">&lt;</span><span class="dv">60</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sex AGE
+1   1  31
+2   1  37
+3   1  33
+4   1  30
+5   1  36
+6   1  38</code></pre>
+</div>
+</div>
+<p>’%in%’은 여러 조건을 나열하여 선택할 수 있어 명목 변수에 편리합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">select</span>(sex, AGE) <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(sex <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span>AGE <span class="sc">&lt;</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sex AGE
+1   1  31
+2   1  37
+3   1  33
+4   1  30
+5   1  36
+6   1  38</code></pre>
+</div>
+</div>
+<p>’is.na’는 데이터 내 변수들 중 NA누락값을 식별 가능합니다. Filter를 통해 변수 ’waist’의 ’NA누락값을 제외해보겠습니다. 그리고 새로운 데이터셋을 생성해보겠습니다.</p>
+<p>우선 NA 누락값이 있는지 확인해야 합니다. tail()은 아래의 6행들을 보여줍니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">count</span>(waist) <span class="sc">%&gt;%</span> <span class="fu">tail</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   waist n
+80   129 7
+81   130 3
+82   133 1
+83   134 1
+84   143 1
+85    NA 5</code></pre>
+</div>
+</div>
+<p>count()는 변수값의 n수를 보여주고, tail()은 가장 밑에 행부터 6개를 보여줍니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">=</span> data1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(waist))</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> <span class="fu">count</span>(waist) <span class="sc">%&gt;%</span> <span class="fu">tail</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   waist n
+79   128 7
+80   129 7
+81   130 3
+82   133 1
+83   134 1
+84   143 1</code></pre>
+</div>
+</div>
+<p>다시 누락값을 확인했을 때, NA값이 없어진 것을 확인할 수 있습니다.</p>
+</section>
+<section id="mutate" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="mutate"><span class="header-section-number">6.2.3</span> mutate</h3>
+<p>’mutate’는 변수를 생성하는 데 자주 사용되는 기본 함수입니다. 이 함수에 익숙해지는 것이 중요합니다. mutate는 ifelse, case_when와 같은 다양한 조건문과 함께 자주 사용됩니다.</p>
+<p>sex의 값인 ‘1,2’를 ’남’,‘여’으로 바꾸고, htn의 값인 ’0,1’을 ’정상’,’고혈압’으로 바꾸어서 data2에 새 변수들을 추가해보겠습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>data3 <span class="ot">=</span> data2 <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sexgp =</span> <span class="fu">case_when</span>(</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    sex <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">'남'</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    sex <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">'여'</span>  )) <span class="sc">%&gt;%</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">htngp =</span> <span class="fu">case_when</span>(</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    htn <span class="sc">==</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">'정상'</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    htn <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">'고혈압'</span>  )) </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>data3 <span class="sc">%&gt;%</span> <span class="fu">select</span>(sexgp, htngp) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sexgp htngp
+1    남  정상
+2    남  정상
+3    남  정상
+4    남  정상
+5    남  정상
+6    남  정상</code></pre>
+</div>
+</div>
+<p>“case_when”을 통해 나이를 10살 단위로 구분하여 agegp라는 새로운 변수를 생성하겠습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>data4 <span class="ot">=</span> data3 <span class="sc">%&gt;%</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">agegp =</span> <span class="fu">case_when</span>(</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    AGE <span class="sc">&lt;</span> <span class="dv">20</span> <span class="sc">~</span> <span class="st">"10"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    AGE <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"20"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    AGE <span class="sc">&lt;</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">"30"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    AGE <span class="sc">&lt;</span> <span class="dv">50</span> <span class="sc">~</span> <span class="st">"40"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    AGE <span class="sc">&lt;</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"50"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"60"</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>data4 <span class="sc">%&gt;%</span> <span class="fu">select</span>(sexgp, htngp, agegp) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sexgp htngp agegp
+1    남  정상    30
+2    남  정상    30
+3    남  정상    30
+4    남  정상    30
+5    남  정상    30
+6    남  정상    30</code></pre>
+</div>
+</div>
+<p>agegp 변수 생성시 case_when에서 “TRUE”는 앞서 설정한 조건 외에 해당하는 값인 60세 이상의 값들에 대해, ’60’로 생성하겠다는 의미입니다.</p>
+<p>조건을 두개 이상 설정하여 BMI의 정상범위도 한번 설정해보겠습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="ot">=</span> data4 <span class="sc">%&gt;%</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bmigp =</span> <span class="fu">case_when</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    BMI <span class="sc">&gt;=</span> <span class="fl">18.5</span> <span class="sc">&amp;</span> BMI <span class="sc">&lt;=</span> <span class="fl">24.9</span> <span class="sc">~</span> <span class="st">"1.정상"</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    BMI <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">"2.저체중"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"3.과체중"</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span> <span class="fu">select</span>(sexgp, htngp, agegp, bmigp) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sexgp htngp agegp    bmigp
+1    남  정상    30   1.정상
+2    남  정상    30 3.과체중
+3    남  정상    30   1.정상
+4    남  정상    30   1.정상
+5    남  정상    30   1.정상
+6    남  정상    30 3.과체중</code></pre>
+</div>
+</div>
+</section>
+<section id="pivot-longer" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="pivot-longer"><span class="header-section-number">6.2.4</span> pivot longer</h3>
+<p>데이터를 분석하거나 시각화할 때, 데이터를 긴 형식(long format)으로 변환하는 경우가 많습니다. 긴 형식은 여러 변수의 값을 하나의 열로 모으고, 해당 변수의 이름을 다른 열에 저장하는 방식입니다. 이를 통해 데이터가 더 유연하게 사용될 수 있으며, 특히 ggplot2를 이용한 시각화나 그룹별 분석에서 유용합니다.</p>
+<blockquote class="blockquote">
+<p>select을 이용해서 필요한 변수들만 선택한 후, pivot longer로 데이터를 변환해보도록 하겠습니다.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(idv_id, AGE, sexgp, agegp, bp_high, bp_lwst) <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(bp_high, bp_lwst),              <span class="co"># 변환할 열 지정</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"blood_pressure_type"</span>,        <span class="co"># 변수명을 저장할 열 이름</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"blood_pressure_value"</span>       <span class="co"># 변수 값을 저장할 열 이름</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 202,696 × 6
+    idv_id   AGE sexgp agegp blood_pressure_type blood_pressure_value
+     &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;                              &lt;int&gt;
+ 1 3823099    31 남    30    bp_high                              123
+ 2 3823099    31 남    30    bp_lwst                               75
+ 3  761158    37 남    30    bp_high                              131
+ 4  761158    37 남    30    bp_lwst                               77
+ 5 3915038    33 남    30    bp_high                              118
+ 6 3915038    33 남    30    bp_lwst                               78
+ 7 3108477    30 남    30    bp_high                              119
+ 8 3108477    30 남    30    bp_lwst                               73
+ 9 4621083    36 남    30    bp_high                              129
+10 4621083    36 남    30    bp_lwst                               75
+# ℹ 202,686 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="기초-데이터-분석" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> 기초 데이터 분석</h1>
+<section id="기초-통계-분석을-통해-데이터의-주요-특징을-파악합니다." class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="기초-통계-분석을-통해-데이터의-주요-특징을-파악합니다."><span class="header-section-number">7.1</span> 기초 통계 분석을 통해 데이터의 주요 특징을 파악합니다.</h2>
+<section id="count" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="count"><span class="header-section-number">7.1.1</span> count</h3>
+<p>변수에서 변수값 수가 얼마나 있는지 파악해볼 필요가 있습니다. 먼저 고혈압의 n수와 성별의 n수를 파악해보겠습니다.</p>
+<p>성별 n수 구하기</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span> <span class="fu">count</span>(sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  sex     n
+1   1 49443
+2   2 51905</code></pre>
+</div>
+</div>
+</section>
+<section id="summarise" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="summarise"><span class="header-section-number">7.1.2</span> summarise</h3>
+<p>‘summarise’은 열별로 정보를 결합하여 표시하는 함수입니다. ’summarise’과 함께 자주 사용되는 함수는 ’mean,’ ‘sd’ (standard deviation), ‘median,’ ‘max,’ ‘min,’ 등이 있으며 ’quantile’도 자주 활용됩니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_age =</span> <span class="fu">mean</span>(AGE), </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">std_age  =</span> <span class="fu">sd</span>(AGE))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  mean_age  std_age
+1 44.56677 14.89363</code></pre>
+</div>
+</div>
+</section>
+<section id="group_by" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="group_by"><span class="header-section-number">7.1.3</span> group_by</h3>
+<p>데이터 탐색에서 group_by는 지정한 변수별 특정 결과값 도출시 자주 사용됩니다.</p>
+<p>특히 연속형 변수의 경우 summarise, 명목형 변수의 경우 count와 함께 사용되어 변수별 n수 산출에 유용합니다. 고혈압 유무를 나타내는 변수 htn을 사용해 보겠습니다.</p>
+<p>이때, 단순히 n수를 구하면, 고혈압이 많은지 판단하기 어렵습니다. 그래서 mutate를 이용해서 비율을 계산하여 남녀에서 고혈압의 비율이 어느정도인지 파악해보고자 합니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sexgp) <span class="sc">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(htngp) <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n<span class="sc">/</span><span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(htngp <span class="sc">==</span> <span class="st">'고혈압'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+# Groups:   sexgp [2]
+  sexgp htngp      n  prob
+  &lt;chr&gt; &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt;
+1 남    고혈압 15483 0.313
+2 여    고혈압 11175 0.215</code></pre>
+</div>
+</div>
+</section>
+<section id="chi-square검정" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="chi-square검정"><span class="header-section-number">7.1.4</span> chi square검정</h3>
+<p>이번에는 chi square검정을 r을 이용하여 수행해보도록 하겠습니다. [카이제곱 검정은 두 범주형 변수(예: 성별, 고혈압 여부)가 서로 관련이 있는지 알아보는 통계 방법이에요. 예를 들어, “남성과 여성의 고혈압 비율이 다를까?” 같은 질문에 답할 때 사용할 수 있습니다.]</p>
+<p>두 범주형 변수 간의 독립성을 평가할 때 주로 사용됩니다. 이를 통해 연관성 여부를 간단하게 우선 확인해볼 수 있습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2*2 교차표 생성</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>chi_table <span class="ot">&lt;-</span> <span class="fu">table</span>(data5<span class="sc">$</span>sexgp, data5<span class="sc">$</span>htngp)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(chi_table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    
+     고혈압  정상
+  남  15483 33960
+  여  11175 40730</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 카이제곱검정</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>chi_sq_test_result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(chi_table)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(chi_sq_test_result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test with Yates' continuity correction
+
+data:  chi_table
+X-squared = 1250.3, df = 1, p-value &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>해당 결과를 통해서 피어슨 카이제곱 검정 결과, 성별(sexgp)과 고혈압 유무(htngp)는 통계적으로 매우 유의미한 연관성을 보이는 것으로 나타났습니다 (X2 =1250.3, df=1, p&lt;0.001). 이는 남성과 여성 간 고혈압 유병률에 통계적으로 유의미한 차이가 존재한다는 것을 의미하며, 이러한 차이가 우연히 발생했을 가능성은 극히 낮다고 해석할 수 있습니다.</p>
+</section>
+<section id="t-test" class="level3" data-number="7.1.5">
+<h3 data-number="7.1.5" class="anchored" data-anchor-id="t-test"><span class="header-section-number">7.1.5</span> t test</h3>
+<p>이번에는 t test를 r을 이용하여 수행해보도록 하겠습니다. [t-검정(t-test)은 두 그룹의 평균이 서로 다른지 알아보는 통계 방법입니다. 예를 들어, “남학생과 여학생의 키 평균이 다를까?” 같은 질문에 답할 때 사용할 수 있습니다.]</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>filtered_data <span class="ot">=</span> data5 <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(htn)) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(sex, AGE, htn) <span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sexgp =</span> <span class="fu">case_when</span>(</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    sex <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"남성"</span>, </span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"여성"</span> </span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>t_test_result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(AGE <span class="sc">~</span> sexgp, <span class="at">data =</span> filtered_data)</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>t_test_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  AGE by sexgp
+t = -9.8336, df = 100992, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means between group 남성 and group 여성 is not equal to 0
+95 percent confidence interval:
+ -1.1035835 -0.7367736
+sample estimates:
+mean in group 남성 mean in group 여성 
+          44.09550           45.01568 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="변수-간의-관계와-패턴을-탐색합니다." class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="변수-간의-관계와-패턴을-탐색합니다."><span class="header-section-number">7.2</span> 변수 간의 관계와 패턴을 탐색합니다.</h2>
+<p>데이터의 기본 구조를 파악하고자 표로 나타내려고 합니다. 표를 간단하게 만들 수 있는 tabf를 이용할 수 있습니다. ### TABLE 1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>test1 <span class="ot">=</span> data5 <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(htngp, sexgp, job, AGE, dep, bmigp)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tabf</span>(test1, </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">stratas =</span> <span class="st">"htngp"</span>, </span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">catVars =</span> <span class="fu">c</span>(<span class="st">"sexgp"</span>,<span class="st">"job"</span>, <span class="st">"bmigp"</span>,<span class="st">"dep"</span>), </span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">conVars =</span> <span class="fu">c</span>(<span class="st">"AGE"</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addHtmlTableStyle</span>(<span class="at">align =</span><span class="st">"ll"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">htmlTable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; border-bottom: 1px solid grey; border-top: 2px solid grey;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">variables</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">values</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">고혈압</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">정상</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">AGE</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">46.9±14.6</td>
+<td style="text-align: left;">43.7±14.9</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">sexgp</td>
+<td style="text-align: left;">남</td>
+<td style="text-align: left;">15483 (31.3%)</td>
+<td style="text-align: left;">33960 (68.7%)</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">여</td>
+<td style="text-align: left;">11175 (21.5%)</td>
+<td style="text-align: left;">40730 (78.5%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">job</td>
+<td style="text-align: left;">사무직</td>
+<td style="text-align: left;">1459 (24.1%)</td>
+<td style="text-align: left;">4592 (75.9%)</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">서비스,판매직</td>
+<td style="text-align: left;">4716 (26.5%)</td>
+<td style="text-align: left;">13103 (73.5%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">농어업</td>
+<td style="text-align: left;">4766 (23.7%)</td>
+<td style="text-align: left;">15321 (76.3%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">기술직</td>
+<td style="text-align: left;">15717 (27.4%)</td>
+<td style="text-align: left;">41674 (72.6%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">bmigp</td>
+<td style="text-align: left;">정상</td>
+<td style="text-align: left;">11049 (20.0%)</td>
+<td style="text-align: left;">44187 (80.0%)</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">저체중</td>
+<td style="text-align: left;">443 (11.9%)</td>
+<td style="text-align: left;">3283 (88.1%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">과체중</td>
+<td style="text-align: left;">15166 (35.8%)</td>
+<td style="text-align: left;">27220 (64.2%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">dep</td>
+<td style="text-align: left;">인사과</td>
+<td style="text-align: left;">2676 (19.9%)</td>
+<td style="text-align: left;">10758 (80.1%)</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">연구개발과</td>
+<td style="text-align: left;">3663 (22.0%)</td>
+<td style="text-align: left;">12977 (78.0%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">경영과</td>
+<td style="text-align: left;">3769 (24.2%)</td>
+<td style="text-align: left;">11836 (75.8%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">영업과</td>
+<td style="text-align: left;">3932 (26.1%)</td>
+<td style="text-align: left;">11135 (73.9%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">무역과</td>
+<td style="text-align: left;">4066 (27.8%)</td>
+<td style="text-align: left;">10566 (72.2%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">시설관리과</td>
+<td style="text-align: left;">4228 (31.6%)</td>
+<td style="text-align: left;">9154 (68.4%)</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; border-bottom: 2px solid grey;">17</td>
+<td style="text-align: left; border-bottom: 2px solid grey;"></td>
+<td style="text-align: left; border-bottom: 2px solid grey;">보관운송과</td>
+<td style="text-align: left; border-bottom: 2px solid grey;">4324 (34.4%)</td>
+<td style="text-align: left; border-bottom: 2px solid grey;">8264 (65.6%)</td>
+<td style="text-align: left; border-bottom: 2px solid grey;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="table-2" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="table-2"><span class="header-section-number">7.2.1</span> TABLE 2</h3>
+<p>직종(job)별 고혈압과의 연관성이 있는지 또는 얼마나 있는지를 알아보는 표를 만들고자합니다. 이는, 로지스틱 회귀분석을 통해 알아낼 수 있습니다.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>mod0 <span class="ot">=</span> data5 <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glm</span>(<span class="at">data=</span>., <span class="at">family=</span><span class="fu">binomial</span>(), </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">formula =</span> htn <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>        job </span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>mod1 <span class="ot">=</span> data5 <span class="sc">%&gt;%</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glm</span>(<span class="at">data=</span>., <span class="at">family=</span><span class="fu">binomial</span>(),</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">formula =</span> htn <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> </span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>        job <span class="sc">+</span> agegp <span class="sc">+</span>sexgp <span class="sc">+</span> bmigp <span class="sc">+</span> dep </span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod0)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = htn == 1 ~ job, family = binomial(), data = .)
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)        -1.14656    0.03005 -38.152  &lt; 2e-16 ***
+job2.서비스,판매직  0.12468    0.03452   3.612 0.000304 ***
+job3.농어업        -0.02115    0.03433  -0.616 0.537741    
+job4.기술직         0.17143    0.03148   5.446 5.14e-08 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 116795  on 101347  degrees of freedom
+Residual deviance: 116675  on 101344  degrees of freedom
+AIC: 116683
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = htn == 1 ~ job + agegp + sexgp + bmigp + dep, family = binomial(), 
+    data = .)
+
+Coefficients:
+                   Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept)        -2.02189    0.04250 -47.572  &lt; 2e-16 ***
+job2.서비스,판매직  0.13358    0.03559   3.753 0.000175 ***
+job3.농어업        -0.04185    0.03537  -1.183 0.236737    
+job4.기술직         0.14327    0.03244   4.416 1.01e-05 ***
+agegp30             0.24489    0.02495   9.814  &lt; 2e-16 ***
+agegp40             0.29025    0.02460  11.798  &lt; 2e-16 ***
+agegp50             0.50865    0.02484  20.480  &lt; 2e-16 ***
+agegp60             0.66818    0.02096  31.884  &lt; 2e-16 ***
+sexgp여            -0.39114    0.01502 -26.045  &lt; 2e-16 ***
+bmigp2.저체중      -0.49899    0.05234  -9.534  &lt; 2e-16 ***
+bmigp3.과체중       0.75887    0.01504  50.466  &lt; 2e-16 ***
+dep2.연구개발과     0.14726    0.02949   4.994 5.92e-07 ***
+dep3.경영과         0.27435    0.02954   9.288  &lt; 2e-16 ***
+dep4.영업과         0.37493    0.02942  12.743  &lt; 2e-16 ***
+dep5.무역과         0.44156    0.02931  15.067  &lt; 2e-16 ***
+dep6.시설관리과     0.62972    0.02947  21.369  &lt; 2e-16 ***
+dep7.보관운송과     0.74537    0.02957  25.204  &lt; 2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 116795  on 101347  degrees of freedom
+Residual deviance: 110404  on 101331  degrees of freedom
+AIC: 110438
+
+Number of Fisher Scoring iterations: 4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">oddsTabf</span>(mod0, mod1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="gmisc_table caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th colspan="4" style="text-align: left;">Table. OR(95%CI) for htn of 1</th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Variables</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Values</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Model.I</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey;">Model.II</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">job</td>
+<td style="text-align: left;">1.사무직</td>
+<td style="text-align: left;"><em>1.00 (reference)</em></td>
+<td style="text-align: left;"><em>1.00 (reference)</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2.서비스,판매직</td>
+<td style="text-align: left;"><strong>1.13 (1.06-1.21)</strong></td>
+<td style="text-align: left;"><strong>1.14 (1.07-1.23)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3.농어업</td>
+<td style="text-align: left;">0.98 (0.92-1.05)</td>
+<td style="text-align: left;">0.96 (0.89-1.03)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4.기술직</td>
+<td style="text-align: left;"><strong>1.19 (1.12-1.26)</strong></td>
+<td style="text-align: left;"><strong>1.15 (1.08-1.23)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">agegp</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>1.00 (reference)</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.28 (1.22-1.34)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">40</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.34 (1.27-1.40)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.66 (1.58-1.75)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">60</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.95 (1.87-2.03)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sexgp</td>
+<td style="text-align: left;">남</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>1.00 (reference)</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">여</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>0.68 (0.66-0.70)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">bmigp</td>
+<td style="text-align: left;">1.정상</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>1.00 (reference)</em></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2.저체중</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>0.61 (0.55-0.67)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3.과체중</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>2.14 (2.07-2.20)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dep</td>
+<td style="text-align: left;">1.인사과</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><em>1.00 (reference)</em></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2.연구개발과</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.16 (1.09-1.23)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3.경영과</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.32 (1.24-1.39)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4.영업과</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.45 (1.37-1.54)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">5.무역과</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.56 (1.47-1.65)</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">6.시설관리과</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><strong>1.88 (1.77-1.99)</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; border-bottom: 2px solid grey;"></td>
+<td style="text-align: left; border-bottom: 2px solid grey;">7.보관운송과</td>
+<td style="text-align: left; border-bottom: 2px solid grey;"></td>
+<td style="text-align: left; border-bottom: 2px solid grey;"><strong>2.11 (1.99-2.23)</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li>mod0</li>
+<li>dat1 %&gt;% glm(…): 이 줄은 일반화된 선형 모델(glm)을 나타냅니다.</li>
+<li>data=., 는 파이프의 왼쪽에서 전달된 데이터 집합을 나타냅니다. 이 경우 dat4입니다.</li>
+<li>family=binomial( ): 모델이 이진 응답 변수(예: 예/아니오, 성공/실패)에 적합한 이항 분포를 사용하도록 지정합니다.</li>
+<li>formula = htn == 1 ~ job: 모델의 공식을 정의합니다. 이 모델은 예측 변수 job의 함수로서 htn이 1(고혈압)과 같을 확률을 모델링합니다.</li>
+<li>mod1: mod0과 유사하나 이번에는 모델에서 dep 외에 다른 변수들을 추가하고자 합니다.</li>
+<li>모델의 목적:
+<ul>
+<li>두 모델 모두 고혈압(htn)와 직종(job) 간의 관계를 이해하려고 합니다.</li>
+<li>mod0은 고혈압에 대한 부서의 개별 효과를 분석합니다.</li>
+<li>mod1은 다른 변수들을 조정한 후 고혈압과 부서 간의 관계를 분석합니다.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="데이터-시각화" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> 데이터 시각화</h1>
+<section id="기본적인-시각화-기술-예를-들어-막대-그래프-선-그래프-등을-배웁니다." class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="기본적인-시각화-기술-예를-들어-막대-그래프-선-그래프-등을-배웁니다."><span class="header-section-number">8.1</span> 기본적인 시각화 기술, 예를 들어 막대 그래프, 선 그래프 등을 배웁니다.</h2>
+<section id="ggplot-종류" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="ggplot-종류"><span class="header-section-number">8.1.1</span> ggplot 종류</h3>
+</section>
+<section id="실제-그려보기" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="실제-그려보기"><span class="header-section-number">8.1.2</span> 실제 그려보기</h3>
+<ul>
+<li>산점도 그래프 geom_point 성별에 따라 나이대별 고혈압을 얼만큼 앓고 있는지 한눈에 보기 위해 선그래프를 그려보겠습니다.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sexgp, AGE) <span class="sc">%&gt;%</span></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(htn) <span class="sc">%&gt;%</span></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(htn <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> prob, <span class="at">color =</span> AGE, <span class="at">group =</span> sexgp)) <span class="sc">+</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"연령대"</span>, <span class="at">y =</span> <span class="st">"고혈압 유병률"</span>) <span class="sc">+</span> <span class="co"># x축과 y축 이름 추가</span></span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sexgp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R-Basic_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>-   group_by(sex, AGE): 성별과 연령으로 데이터를 그룹화합니다.
+-   count(htn): 고혈압 발생 여부(htn 변수)에 따라 각 그룹의 빈도를 계산합니다.
+-    mutate(prob = n / sum(n)): 각 그룹에서 고혈압 발생 확률을 계산합니다.
+-   filter(htn == 1): 고혈압이 있는 경우만을 필터링합니다.
+-   ungroup(): 그룹화를 해제합니다.
+-   ggplot(aes(x = age_group, y = prob, color = age_group, group = sex)): ggplot 객체를 생성하고, x축에는 연령 그룹을, y축에는 고혈압 발생 확률을 매핑합니다. 선 색상은 연령 그룹으로 구분하고, group = sex로 각 성별별로 다른 그룹으로 구분합니다.
+-   geom_point(): 점을 추가하여 각 그룹의 데이터를 표시합니다.
+-   theme(legend.title = element_blank()) : 범례(legend)의 제목을 없앱니다.
+-   theme(legend.position = "none") : 범례의 위치를 삭제함으로써, 범례를 지웁니다. 범례를 나타낼 경우의 그래프는 아래와 같습니다.
+-   facet_wrap(\~sex): 성별에 따라 서로 다른 그래프 패널로 분할하여 시각화합니다.</code></pre>
+<ul>
+<li>선 그래프 geom_line 성별에 따라 나이대별 고혈압을 얼만큼 앓고 있는지 한눈에 보기 위해 선그래프를 그려보겠습니다.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sexgp, agegp) <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(htn) <span class="sc">%&gt;%</span></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(htn <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> agegp, <span class="at">y =</span> prob, <span class="at">group =</span> sexgp)) <span class="sc">+</span> <span class="co"># Use interaction(dep, sex) for distinct lines</span></span>
+<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"연령대"</span>, <span class="at">y =</span> <span class="st">"고혈압 유병률"</span>) <span class="sc">+</span></span>
+<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sexgp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R-Basic_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>-   geom_line(): 선을 추가하여 데이터 간의 경향성을 시각화합니다.</code></pre>
+<ul>
+<li>막대그래프 동일한 현상을 막대그래프로 그려보겠습니다.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sexgp, agegp) <span class="sc">%&gt;%</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(htn) <span class="sc">%&gt;%</span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)<span class="sc">*</span><span class="dv">100</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(htn <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> agegp, <span class="at">y =</span> prob, <span class="at">fill =</span> sexgp)) <span class="sc">+</span> </span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"skyblue"</span>, <span class="st">"pink"</span>)) <span class="sc">+</span>  <span class="co"># 색상 설정</span></span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sexgp) <span class="sc">+</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"연령대에 따른 고혈압 유병률"</span>, <span class="at">x =</span> <span class="st">"연령대"</span>, <span class="at">y =</span> <span class="st">"유병률(%)"</span>) <span class="sc">+</span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R-Basic_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>-   geom_bar(): 막대를 이용하여 성별별 연령그룹별 고혈압 발생 확률을 시각화합니다.</code></pre>
+<ul>
+<li>추세선 그래프 동일한 현상을 추세선 그래프를 바탕으로 추세선 및 산점도 그래프를 그려보겠습니다.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sexgp,AGE) <span class="sc">%&gt;%</span></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(htn) <span class="sc">%&gt;%</span></span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prob =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(htn <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> AGE, <span class="at">y =</span> prob, <span class="at">color =</span> AGE, <span class="at">group =</span> sexgp)) <span class="sc">+</span> </span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span></span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"연령대에 따른 고혈압 유병률"</span>, <span class="at">x =</span> <span class="st">"연령대"</span>, <span class="at">y =</span> <span class="st">"유병률(%)"</span>) <span class="sc">+</span></span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>sexgp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R-Basic_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<pre><code>-   geom_smooth(): 추세선을 활용하여 연속형 변수인 AGE의 성별별 추세를 시각화합니다.</code></pre>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Dose_Response_Model_III.html" class="pagination-link" aria-label="비선형 모델 비교과 MixedModel">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">비선형 모델 비교과 MixedModel</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
